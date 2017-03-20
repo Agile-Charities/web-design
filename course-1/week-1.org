@@ -92,17 +92,51 @@ We can write `.html` files by hand, because `.html` files are just text with som
 ** Example HTML document
 [[./week-1-docs/example_1.html]]
 
-* History of the Internet
-** Arpanet
-connected Department of Defense and universities
-** Darpanet
-improved Arpanet
-** TCP/IP
-Transport Control Protocol / Internetwork Protocol
-a system for allowing networks to communicate with other networks
-modern internet is built on TCP/IP
+note that this is mostly English. The tags help the computer know what to do with the English.
+
+The structure of the tags is called the syntax of HTML. Tags need to be opened and closed. Note the syntax for opening a tag (look at the beginning of the lines) and the syntax for closing a tag (at the end of the lines).
+
+Each tag has a purpose, and most of them have sensible names (some of them don't, we'll make note of them). The meaning of the tags is called the semantics of HTML. Most tags are almost human readable. `<h1>hello world</h1>` means we are dealing with a "header" whose text is "hello world".
+
+
 
 
 * History of HTML
+** HTML version 1
+Developed in 1990 as a way to link documents electronically. The internet as we know it didn't really exist back then, and this first version of HTML was used primarily by scientists who didn't care about color or styling. They just wanted to be able to send structured documents to their peers on the other side of the country (eventually, world). More on the history of networks, and the Internet, can be found in the textbook reading (which isn't too bad).
 
+By 1993, the internet had started developing, and the users wanted graphics and colors. The Mosaic browser was developed, and it was the first graphical browser. Mosaic launched what we would recognize as the early form of the modern internet, and cat pictures spread everywhere. Mosaic caused a 341,364% annual growth of internet users, and gained competitors (Netscape in 1994, Internet Explorer in 1995).
+
+** Browser Wars
+Every browser tried to stand out as better than the other browser, so they started implementing proprietary tags like `<marquee>` and `<blink>` that wouldn't work in competitor browsers.
+
+Computer people people got upset, and started trying to standardize HTML. Groups like IETF, W3C and WAI formed with the goal of deciding what is and is not valid HTML.
+
+Changes in standards
+
+| year        | movement                                      |
+|-------------+-----------------------------------------------|
+| 1990 - 1994 | HTML was text based, with no fancy stuff      |
+| 1993        | Mosaic brings images into play                |
+| 1995 - 1999 | Browser compatibility is gone                 |
+| 2000 - 2005 | Browsers agree to separate content from style |
+| 2005 - 2008 | HTML with CSS becomes the standard            | 
+
+HTML verisons
+
+| year | version   |                                          |
+|------+-----------+------------------------------------------|
+| 1993 | HTML 1.0  | Tim Berners-Lee                          |
+| 1995 | HTML 2.0  | (Internet Engineering Task Force (IETF)) |
+| 1996 | CSS 1     |                                          |
+| 1997 | HTML 3.2  | (W3C), included proprietary stuff        |
+| 1997 | HTML 4.0  | tried to normalize features              |
+| 1998 | CSS 2     |                                          |
+| 1999 | HTML 4.01 | Multiple document types                  |
+| 2012 | HTML 5    | Standardization (at long last)           |
+
+Nowadays, HTML5 is the One True Standard for HTML documents. All modern web tech is now based on HTML, CSS, JavaScript, and the DOM.
+  
+
+* How does the Internet work
 
