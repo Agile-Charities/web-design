@@ -1,1 +1,99 @@
+* This Course (Course 1 in Web Design Specialization)
+Covered in this course:
+
+- HTML syntax and semantics
+
+- Accessibility
+
+- How to start coding
+
+** Week 1 - questions
+
+what happens when you type in a URL?
+
+what tools do you need in order to code?
+
+what is HTML? HTML5?
+
+** Week 2 - some theory, some code
+
+DOM
+
+standard HTML tags
+
+** Week 3 - putting it all together
+
+Validating code
+
+- syntax
+
+- accessibility
+
+Domain name registration and web hosting
+
+Final project that
+
+- has several pages
+
+- passes W3C validation
+
+- passes WAVE accessibility review
+
+
+
+** Course content
+weekly videos
+
+- lecture format - watch anywhere
+
+- demo format - type along with the video
+
+weekly readings
+
+- free online textbook
+
+- free online articles
+
+weekly assessments
+
+- quizzes
+
+final project
+
+- straightforward, but the final result will be ugly (CSS comes next!)
+
+
+** Advice on completing this course
+
+- work with peers
+
+- ask questions
+
+- never spend more than 20 minutes at a time on a problem. Don't be afraid to walk away and think about the task, or ask someone for advice.
+
+- learn how to look things up. Independent research and learning is key in all fields, but especially so when working with computers. This is the single most important skill separating computer illiterates and computer masters.
+
+- practice. You will not learn the material if you do not use the material. The best learning comes from making mistakes, and figuring out what you did wrong. Don't be afraid of screwing up, as screwing up is the fastest way to learn.
+
+
+* Useful tools
+** Firefox with Tilt 3D
+https://addons.mozilla.com/en-US/firefox/addon/tilt
+
+* What is HTML5
+Hyper Text Markup Language, version 5
+
+* History of the Internet
+** Arpanet
+connected Department of Defense and universities
+** Darpanet
+improved Arpanet
+** TCP/IP
+Transport Control Protocol / Internetwork Protocol
+a system for allowing networks to communicate with other networks
+modern internet is built on TCP/IP
+
+
 * History of HTML
+
+
