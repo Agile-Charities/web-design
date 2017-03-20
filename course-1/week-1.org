@@ -81,7 +81,15 @@ final project
 https://addons.mozilla.com/en-US/firefox/addon/tilt
 
 * What is HTML5
-Hyper Text Markup Language, version 5
+Hypertext Markup Language, version 5. Markup languages annotate documents, they are not programming languages. In HTML, we use tags to indicate things like headings, lists, links, images, text, etc.
+
+** `.html` files
+`.html` is the file extension for HTML files. By convention, your computer knows that `.html` files should be opened in the browser. Your browser knows how to make sense of the file, and properly display its contents.
+
+We can write `.html` files by hand, because `.html` files are just text with some special formatting and syntax. It's very easy to read, and you can make sense out of it even if you don't know what the tags mean.
+
+** Example HTML document
+[[./week-1-docs/example_1.html]]
 
 * History of the Internet
 ** Arpanet
