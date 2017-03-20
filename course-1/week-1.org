@@ -50,7 +50,7 @@ weekly videos
 
 weekly readings
 
-- free online textbook
+- free online textbook: [[http://textbooks.opensuny.org/the-missing-link-an-introduction-to-web-development-and-programming]]
 
 - free online articles
 
@@ -79,6 +79,7 @@ final project
 * Useful tools
 ** Firefox with Tilt 3D
 https://addons.mozilla.com/en-US/firefox/addon/tilt
+
 
 * What is HTML5
 Hypertext Markup Language, version 5. Markup languages annotate documents, they are not programming languages. In HTML, we use tags to indicate things like headings, lists, links, images, text, etc.
