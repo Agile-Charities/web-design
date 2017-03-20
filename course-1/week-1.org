@@ -139,4 +139,65 @@ Nowadays, HTML5 is the One True Standard for HTML documents. All modern web tech
   
 
 * How does the Internet work
+LAN - Local Area Network. An isolated network of computers.
+
+WAN - Wide Area Network. Several LANs, all connected to each other
+
+Internet - the biggest WAN, connecting most LANs.
+
+Servers
+
+- hold shared resources
+
+- always connected, waiting for requests
+
+Clients
+
+- machines for personal use (laptop, phone, etc.)
+
+** Request/Response Cycle
+Clients request a page (file, document, whatever) from a server, and the server sends a response.
+
+How does it work?
+
+URL - Uniform Resource Locator
+
+- protocol - how to connect
+
+- domain - who has the document
+
+- path - which particular file on the domain are you looking for
+
+`https://en.wikipedia.org/wiki/URL`
+
+Using the `https` protocol, ask domain `en.wikipedia.org` for document `/wiki/URL`.
+
+If no document is specified, the file `index.html` is the default document.
+
+If there is a problem, the server might return an error code or error page. You can find the big list, or look up a specific code, by googling for "HTTP status codes". Wikipedia has a very nice list.
+
+| Common error classes | description                                        |
+|----------------------+----------------------------------------------------|
+| 1XX - 100 series     | Informational codes                                |
+| 2XX - 200 series     | Success codes                                      |
+| 3XX - 300 series     | Redirection codes                                  |
+| 4XX - 400 series     | Client codes (the request was bad)                 |
+| 5XX - 500 series     | Server codes (the server can't perform as expected |
+
+Common protocols:
+
+- HTTP - HyperText Transfer Protocol
+
+- HTTPS - Secure HTTP
+
+- FTP - File Transfer Protocol
+
+The `.com`, `.org`, `.net`, and others are called top-level domains (TLD). All domain names (wikipedia, google, facebook, etc.) exist within a TLD. ICAAN decides what is and is not a TLD.
+
+** IP address
+Things called Domain Name Servers (DNS) keep track of where all the different domains are served from. They keep track of servers and clients using IP addresses. There are two kinds of IP addresses.
+
+IPv4 uses 4 sets of 3 numeric digits: `192.168.1.10`. IP address are similar to street addresses. We are running out of these, but they are still the most common type of IP address. There are 2^32 possible IPv4 IP address, which isn't as many as you might think.
+
+IPv6 uses 8 sets of 4 hexadecimal digits, which allows for 2^128 possible IPv6 addresses. IPv6 looks like this: `fe80::c9cc:690e:c831:70f8`. You'll note that this is only 5 sets of numbers, and that's because we are nowhere near to needing all 8 sets just yet.
 
