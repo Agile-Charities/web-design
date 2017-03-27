@@ -283,7 +283,7 @@ Semantic tags help you organize your website code, which makes for a cleaner use
 ** Template Page
 (Important: This video should be followed by each student on their own time, to reinforce the ideas presented during the lectures)
 
-Here is a completed template page, without an real content.
+Here is a completed template page, without any real content.
 
 The HTML validator used in the video is [[https://validator.w3.org][validator.w3.org]]
 
@@ -367,7 +367,7 @@ Using HTML attributes is much easier. Mandating =<img>= sizes is so common that 
 
 Sizing elements takes trial and error. You won;t usually want to use hardcoded picture size, but for simpler sites it can be quick and easy. Percents are usually better in the general case, as it takes into account the display size (great for mobile devices).
 
-**** Favicon
+*** Favicon
 Favicons are pictures that appear in the title of the page, up in the tab bar. You can only have 1 per page. You need to include it up in the =<head>= section, like so:
 
 #+BEGIN_SRC html
@@ -378,7 +378,7 @@ Favicons are pictures that appear in the title of the page, up in the tab bar. Y
 
 Favicons are optional, but most big sites have them.
 
-**** Alternative Text
+*** Alternative Text
 aka the =alt= attribute. These are used by screenreaders (accessibility) and search engines to figure out what is in the image. Tips for good alt text:
 
 - be accurate
@@ -396,7 +396,7 @@ aka the =alt= attribute. These are used by screenreaders (accessibility) and sea
 #+END_SRC
 
 
-*** Anchor Tags (Links)
+** Anchor Tags (Links)
 Links - =<a>= - need two main parts:
 
 - The "hyper-reference" (=href=)
@@ -407,14 +407,14 @@ Links are really easy to mess up (typo, etc.). When building your web sites, alw
 
 There are 4 types of links
 
-**** Absolute Links
+*** Absolute Links
 #+BEGIN_SRC html
 <a href="https://www.coursera.org">Coursera</a>
 #+END_SRC
 
 Absolute links are when you have the fully formed URL. These are the most common link, and needed in order to link to sites on a different domain.
 
-**** Relative Links / Internal
+*** Relative Links / Internal
 
 These links can only link to places on the same site.
 
@@ -438,7 +438,7 @@ Relative links are pretty useful when developing sites, but once a site is "fini
 
 However: never link into the file system of your computer. These links will almost always break.
 
-**** Graphical Links
+*** Graphical Links
 
 You can use an image instead of text. Like so:
 
@@ -453,7 +453,7 @@ Now, clicking on the picture lets the user follow the link.
 Make sure your alt text is informative about both the link and the picture.
 
 
-**** Link Targets
+*** Link Targets
 You can have links open in different ways:
 
 #+BEGIN_SRC html
@@ -468,7 +468,7 @@ You can have links open in different ways:
 =_top= and =_parent= are to other options, but we won't cover those. They are only useful when you are determined to open new tabs and windows, and force the users attention to the newly opened page. aka, this is extremely hostile to the user.
 
 
-*** Multimedia
+** Multimedia
 Video and Audio
 
 Designers tend to love these (look how cool our site is!)
@@ -481,7 +481,7 @@ Real world example: Facebook tried autoplaying all the videos on their site. Whe
 
 Prior to HTML5, there wasn't a good way to include these sorts of elements.
 
-**** HTML5 Video
+*** HTML5 Video
 
 =<video>=
 
@@ -514,7 +514,7 @@ You can also tell the video to start at a specific point, by adding a =.ext#= to
 <video src="movie.mp4.ext#t=1,24" controls></video>
 #+END_SRC
 
-**** Audio
+*** Audio
 
 Similar to =<video>=
 
@@ -527,7 +527,7 @@ Similar to =<video>=
 <audio src="music.mp3.ext#t=1,15" controls>
 #+END_SRC
 
-**** Plugins
+*** Plugins
 
 We don't really use plugins too much anymore, they caused too many problems for too little benefit. Some of the more prominent ones included
 
@@ -542,13 +542,11 @@ We don't really use plugins too much anymore, they caused too many problems for 
 These are almost entirely dead now, except Apply is trying to keep Quicktime for some reason. It isn't good though, and you should avoid it at all costs.
 
 
-*** Tables
+** Tables
 
 =<table>= is for data, and only data. Way back in the day, people used =<table>= for content layout, but there are much better ways to do that nowadays.
 
 When you start working with =<table>=, you need to figure out a few things. The most important is to know how many columns you need.
-
-*** Standard Usage
 
 =<table>= is the entire table
 
