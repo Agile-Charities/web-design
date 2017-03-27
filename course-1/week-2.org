@@ -544,15 +544,71 @@ These are almost entirely dead now, except Apply is trying to keep Quicktime for
 
 *** Tables
 
+=<table>= is for data, and only data. Way back in the day, people used =<table>= for content layout, but there are much better ways to do that nowadays.
+
+When you start working with =<table>=, you need to figure out a few things. The most important is to know how many columns you need.
+
+*** Standard Usage
+
+=<table>= is the entire table
+
+=<tr>= is one row of the table
+
+=<td>= is one cell in a single row
+
+=<th>= is a heading row. It works similarly to =<tr>=, but it goes at the top.
+
+#+BEGIN_SRC html
+<table>
+  <th>
+    <td>URL</td>
+    <td>Protocol</td>
+    <td>Domain</td>
+    <td>Path</td>
+  </th>
+  <tr>
+    <td>https://en.wikipedia.com/wiki/HMTL</td>
+    <td>HTTPS</td>
+    <td>en.wikipedia.com</td>
+    <td>/wiki/HTML</td>
+  </tr>
+  <tr>
+    <td>https://www.google.com</td>
+    <td>HTTPS</td>
+    <td>www.google.com</td>
+    <td>index.html</td>
+  </tr>
+</table>
+#+END_SRC
+
+If you need larger cells, you can use the =rowspan= and =colspan= attributes to increase the size. These attributes default to =1=, and you can set them to any number of cells (as long as the table is big enough for the span).
+
+#+BEGIN_SRC html
+<table border="1">
+  <th>
+    <td>Child's Name</td>
+    <td>Parent's Name</td>
+  </th>
+  <tr>
+    <td rowspan="2">Jeff</td>
+    <td>Amy</td>
+  </tr>
+  <tr>
+    <td>Neil</td>
+  </tr>
+</table>
+#+END_SRC
+
+I should note that the =border= attribute is here to make the =rowspan= easy to see. This is not how we normally do things, as styling is done through CSS. We'll learn better ways to style things in the coming weeks.
 
 
+** Review
+The most common errors are the following:
 
+- Typos. HTML syntax is important, and your browser will mess up after a single typo.
 
+- Unclosed tags. Always check that your tags are closed, or your page will look really weird.
 
-
-
-
-
-
+These can be avoided by using an HTML Validator like [[https://validator.w3.org][this W3C validator]].
 
 
