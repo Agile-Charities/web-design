@@ -273,6 +273,8 @@ There are far too many to cover here, so it's good to be aware of what sort of t
 
 - media elements
 
+When you need to lookup tags, the best place to go is to the [[https://developer.mozilla.org/en-US/docs/Web/HTML][Mozilla Developer Network]]. Mozilla makes their living off of building amazing web tech (like the Firefox web browser), and are a fantastic resource for all things web related. They provide excellent references for HTML, CSS, and JavaScript.
+
 *** Review
 Semantic tags help you organize your website code, which makes for a cleaner user experience.
 
@@ -314,4 +316,5 @@ The HTML validator used in the video is [[https://validator.w3.org][validator.w3
 </html>
 #+END_SRC
 
+** Images
 
