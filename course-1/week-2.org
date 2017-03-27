@@ -14,6 +14,6 @@ structure, which basically means that the =<html>= tag is at the top, and all ot
 </html>
 #+END_HTML 
 
-There used to be a lot of =DOCTYPE=s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
+There used to be a lot of =DOCTYPE= s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
 
 
