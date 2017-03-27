@@ -21,17 +21,53 @@ Here's some HTML code that you can refer to while we discuss the different parts
 *** =<!DOCTYPE html>=
 There used to be a lot of =DOCTYPE= s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
 
+We'll always use =<!DOCTYPE html>=, so don't worry about the other ones.
+
 *** =<head>=
 The =<head>= tag contains metadata for the browser. Humans aren't going to read this, but there are a lot of tools (like Google Search) that read metadata to try to figure out what sort of content is on the page.
 
 Examples of metadata that we put in the =<head>= tag are the language our page is in and the title of our page (the title is what you see when you look at the page's browser tab).
 
+=<meta>= tags are unusual, in that you don't need to close them. See the example html code for an example =<meta>= tag.
+
 This is also where you include stylesheets (CSS) and JavaScript that your page relies on. We'll talk more about CSS and JS in courses 2 and 3, respectively.
+
+#+BEGIN_SRC html
+<head>
+  <meta charset="UTF-8">
+  <title>My Web Page</title>
+</head>
+#+END_SRC
 
 *** =<body>=
 The majority of web site content lives inside the =<body>= tag. It's very important to maintain the tree-like structure of the DOM in here, or else your web page will render wrongly.
 
 The tree-like structure means that each element is a "child" element of a "parent" element. A parent element can have any number of child elements, and child elements can also be the parent of other child elements.
 
+#+BEGIN_SRC html
+<body>
+  <p>This is some content</p>
+  <ul>
+    <li>This is a list item</li>
+    <li>The 'ul' tag means "make an Unordered List</li>
+    <li>And we add list elements with the 'li' tag</li>
+    <li>As an example of a well formed DOM, note where we end the 'ul' and 'li' tags. See how the 'ul' elements contains all of 'li' elements?</ul>
+    <li>The 'ul' is the parent elements of the 'li' elements, so all the 'li' elements are inside the 'ul' element</li>
+    <li>I'll render this code just below here, so you can see it in action.</li>
+  </ul>
+</body>
+#+END_SRC
 
-
+#+BEGIN_HTML
+<body>
+  <p>This is some content</p>
+  <ul>
+    <li>This is a list item</li>
+    <li>The 'ul' tag means "make an Unordered List</li>
+    <li>And we add list elements with the 'li' tag</li>
+    <li>As an example of a well formed DOM, note where we end the 'ul' and 'li' tags. See how the 'ul' elements contains all of 'li' elements?</ul>
+    <li>The 'ul' is the parent elements of the 'li' elements, so all the 'li' elements are inside the 'ul' element</li>
+    <li>I'll render this code just below here, so you can see it in action.</li>
+  </ul>
+</body>
+#+END_HTML
