@@ -201,3 +201,24 @@ IPv4 uses 4 sets of 3 numeric digits: `192.168.1.10`. IP address are similar to 
 
 IPv6 uses 8 sets of 4 hexadecimal digits, which allows for 2^128 possible IPv6 addresses. IPv6 looks like this: `fe80::c9cc:690e:c831:70f8`. You'll note that this is only 5 sets of numbers, and that's because we are nowhere near to needing all 8 sets just yet.
 
+
+* Working with HTML files
+show how to make the file system show file extensions
+
+show how to create a new folder for each project - important!
+
+show how to create new, empty text files
+
+show how to change a file's type from `.txt` to `.html`
+
+show how to choose to open `.html` as either text or in browser
+
+show troubleshooting and common problems
+
+show refresh, and show F5
+
+if you change your filenames, make sure you are looking at the correct file in the browser
+
+[[./week-1-docs/hello-world.html][Hello World]]
+
+

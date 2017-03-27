@@ -1,0 +1,19 @@
+* Web Desing, Course 1 (HTML), Week 2
+** Document Object Model (DOM)
+We call the structure of a web page the DOM. It's a tree-like
+structure, which basically means that the =<html>= tag is at the top, and all other tags are inside of it (the video gives a nice graphic, at 1:03).
+
+#+BEGIN_HTML
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>content goes here</p>
+  </body>
+</html>
+#+END_HTML 
+
+There used to be a lot of =DOCTYPE=s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
+
+
