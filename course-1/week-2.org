@@ -46,7 +46,7 @@ The tree-like structure means that each element is a "child" element of a "paren
 
 #+BEGIN_SRC html
 <body>
-  <p>This is some content</p>
+  <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
     <li>The 'ul' tag means "make an Unordered List</li>
@@ -58,9 +58,11 @@ The tree-like structure means that each element is a "child" element of a "paren
 </body>
 #+END_SRC
 
+(begin rendered HTML)
+
 #+BEGIN_HTML
 <body>
-  <p>This is some content</p>
+  <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
     <li>The 'ul' tag means "make an Unordered List</li>
@@ -71,3 +73,7 @@ The tree-like structure means that each element is a "child" element of a "paren
   </ul>
 </body>
 #+END_HTML
+
+(end of rendered HTML)
+
+
