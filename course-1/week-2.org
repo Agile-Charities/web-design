@@ -50,6 +50,12 @@ The tree-like structure means that each element is a "child" element of a "paren
 <body>
   <h3>This is some content</h3>
   <ul>
+    <li>This is a list item</li>
+    <li>The &lt;ul&gt; tag means "make an Unordered List</li>
+    <li>And we add list elements with the &lt;li&gt; tag</li>
+    <li>As an example of a well formed DOM, note where we end the &lt;ul&gt; and &lt;li&gt; tags. See how the &lt;ul&gt; elements contains all of &lt;li&gt; elements?</ul>
+    <li>The &lt;ul&gt; is the parent elements of the &lt;li&gt; elements, so all the &lt;li&gt; elements are inside the &lt;ul&gt; element</li>
+    <li>I'll render this code just below here, so you can see it in action.</li>
   </ul>
 </body>
 #+END_SRC
