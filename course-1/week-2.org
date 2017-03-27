@@ -180,7 +180,6 @@ Be aware of the differences between open and closing tags, and self closing tags
 ** Semantic Tags
 There are a number of common design elements in a web site, and we're going to be discussing some of them.
 
-
 *** =<header>=
 Frequently used for introductory elements and website navigation.
 
@@ -194,6 +193,8 @@ Frequently used for introductory elements and website navigation.
 The =<header>= tag is a block tag and is primarily used to contain top-of-the-page elements. The elements it contains are its contents, so there isn't any special formatting. The =<header>= tag is =display: block=, so it will make space for itself. However, as you should only use it at the very top of your page (first elements inside of =<body>=), there won't be anything that needs to get pushed out of the way.
 
 The =<header>= and =<head>= tags are different, and getting confused by them is common. It can be useful to keep a =template.html= file lying around, with the following contents inside. This way, you won't need to figure out which is which every time you make a web page.
+
+There will be a better =template.html= at the bottom of this page (and in the =week-2-docs= folder), but this will give you the right idea.
 
 #+BEGIN_SRC html
 <!DOCTYPE html>
@@ -225,9 +226,44 @@ The =<nav>= tag is almost always found inside the =<header>= tag, so our example
 </header>
 #+END_SRC
 
+*** =<footer>=
+The counterpart to the =<header>= tag, the =<footer>= tag is found at the very bottom of the page.
 
+#+BEGIN_SRC html
+<footer>
+  <p>&copy; 2017 Agile Charities</p>
+</footer>
+#+END_SRC
 
+Footer are not required, but a lot of sites choose to have them.
 
+It is important to note that the =<footer>= tag does not put things on the bottom of the display. It put things at the end of the content. If your content does not cover the whole screen, then the =<footer>= content will not be at the bottom.
 
+*** =<figure>=
+Like =<img>=, but much more meaningful. the =<figure>= tag allows you to use captions and have multiple media resources.
 
+#+BEGIN_SRC html
+<figure>
+  <img src="some_pic.jpg"> alt="a picture" />
+  <figcaption>Here we see a picture, rendered by the browser.</figcaption>
+</figure>
+#+END_SRC
+
+*** Other important tags
+There are far too many to cover here, so it's good to be aware of what sort of tags exist, and where to look them up.
+
+- Structural elements
+
+- form elements
+
+- input elements
+
+- graphics elements
+
+- media elements
+
+*** Review
+Semantic tags help you organize your website code, which makes for a cleaner user experience.
+
+(the professor claims that =<div>= is going out of style, but I've seen no evidence of that in modern web development libraries and frameworks)
 
