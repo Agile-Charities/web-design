@@ -46,12 +46,14 @@ The majority of web site content lives inside the =<body>= tag. It's very import
 
 The tree-like structure means that each element is a "child" element of a "parent" element. A parent element can have any number of child elements, and child elements can also be the parent of other child elements.
 
+The example below shows some body content. Ignore the =&lt;= and =&gt;=, we'll talk about them later.
+
 #+BEGIN_SRC html
 <body>
   <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
-    <li>The &lt;ul&gt; tag means "make an Unordered List</li>
+    <li>The &lt;ul&gt; tag means "make an Unordered List"</li>
     <li>And we add list elements with the &lt;li&gt; tag</li>
     <li>As an example of a well formed DOM, note where we end the &lt;ul&gt; and &lt;li&gt; tags. See how the &lt;ul&gt; elements contains all of &lt;li&gt; elements?</ul>
     <li>The &lt;ul&gt; is the parent elements of the &lt;li&gt; elements, so all the &lt;li&gt; elements are inside the &lt;ul&gt; element</li>
@@ -67,7 +69,7 @@ The tree-like structure means that each element is a "child" element of a "paren
   <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
-    <li>The &lt;ul&gt; tag means "make an Unordered List</li>
+    <li>The &lt;ul&gt; tag means "make an Unordered List"</li>
     <li>And we add list elements with the &lt;li&gt; tag</li>
     <li>As an example of a well formed DOM, note where we end the &lt;ul&gt; and &lt;li&gt; tags. See how the &lt;ul&gt; elements contains all of &lt;li&gt; elements?</ul>
     <li>The &lt;ul&gt; is the parent elements of the &lt;li&gt; elements, so all the &lt;li&gt; elements are inside the &lt;ul&gt; element</li>
@@ -166,7 +168,64 @@ We use characters like =<= to open tags, so how do we include them in text we wa
 | cents sign     | =&cent;=          |
 | =&=            | =amp;=            |
 
-Generally speaking, you'll want to Google these when you need them. Remembering them all is tedious, but you'll probably end up remembering =&nbsp;= (non-breaking space) as it can come up fairly often.
+Generally speaking, you'll want to Google these when you need them (There are loads more that we won't be going over in class). Remembering them all is tedious, but you'll probably end up remembering =&nbsp;= (non-breaking space) as it can come up fairly often.
+
+
+*** Review of Tags
+Know the difference between tags and attributes
+
+Be aware of the differences between open and closing tags, and self closing tags
+
+
+** Semantic Tags
+There are a number of common design elements in a web site, and we're going to be discussing some of them.
+
+
+*** =<header>=
+Frequently used for introductory elements and website navigation.
+
+#+BEGIN_SRC html
+<header>
+  <h1>This is the Title</h1>
+  <h2>The author is me</h2>
+</header>
+#+END_SRC
+
+The =<header>= tag is a block tag and is primarily used to contain top-of-the-page elements. The elements it contains are its contents, so there isn't any special formatting. The =<header>= tag is =display: block=, so it will make space for itself. However, as you should only use it at the very top of your page (first elements inside of =<body>=), there won't be anything that needs to get pushed out of the way.
+
+The =<header>= and =<head>= tags are different, and getting confused by them is common. It can be useful to keep a =template.html= file lying around, with the following contents inside. This way, you won't need to figure out which is which every time you make a web page.
+
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Page Title</title>
+  </head>
+  <body>
+    <header>
+    </header>
+  </body>
+</html>
+#+END_SRC
+
+*** =<nav>=
+=<nav>= is used for holing navigational links. These links are for navigating around your page, or linking to other pages on the same site. You want to avoid putting links to other sites in your =<nav>=, although there are some exceptions where it's okay.
+
+The =<nav>= tag is almost always found inside the =<header>= tag, so our example will put it in there.
+
+#+BEGIN_SRC html
+<header>
+  <nav>
+    <ul>
+      <li><a href="#section1">Section 1</a></li>
+      <li><a href="#section2">Section 2</a></li>
+    </ul>
+  </nav>
+</header>
+#+END_SRC
+
+
 
 
 
