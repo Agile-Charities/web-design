@@ -226,6 +226,17 @@ The =<nav>= tag is almost always found inside the =<header>= tag, so our example
 </header>
 #+END_SRC
 
+*** =<main>=
+=<main>= is where the majority of content lives. This is where all the fun stuff usually happens. We';; talk a lot of the stuff in this section as the course goes on, so for now I'll just provide a quick template.
+
+#+BEGIN_SRC html
+<body>
+  <main>
+    <p>this is where most stuff will go.</p>
+  </main
+</body>
+#+END_SRC
+
 *** =<footer>=
 The counterpart to the =<header>= tag, the =<footer>= tag is found at the very bottom of the page.
 
@@ -266,4 +277,41 @@ There are far too many to cover here, so it's good to be aware of what sort of t
 Semantic tags help you organize your website code, which makes for a cleaner user experience.
 
 (the professor claims that =<div>= is going out of style, but I've seen no evidence of that in modern web development libraries and frameworks)
+
+** Template Page
+(Important: This video should be followed by each student on their own time, to reinforce the ideas presented during the lectures)
+
+Here is a completed template page, without an real content.
+
+The HTML validator used in the video is [[https://validator.w3.org][validator.w3.org]]
+
+#+BEGIN_SRC html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My Webpage</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Webpage</h1>
+      <nav>
+        <ul>
+          <li><a href="#some-section">Navigational Link</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <p>This is where the content goes</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2017 Agile charities</p>
+    </footer>
+  </body>
+</html>
+#+END_SRC
+
 
