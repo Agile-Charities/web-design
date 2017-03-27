@@ -62,10 +62,9 @@ The example below shows some body content. Ignore the =&lt;= and =&gt;=, we'll t
 </body>
 #+END_SRC
 
-(begin rendered HTML)
-
 #+BEGIN_HTML
 <body>
+  <hr />
   <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
@@ -75,11 +74,10 @@ The example below shows some body content. Ignore the =&lt;= and =&gt;=, we'll t
     <li>The &lt;ul&gt; is the parent elements of the &lt;li&gt; elements, so all the &lt;li&gt; elements are inside the &lt;ul&gt; element</li>
     <li>I'll render this code just below here, so you can see it in action.</li>
   </ul>
-<br />
+<hr />
 </body>
 #+END_HTML
 
-(end of rendered HTML)
 
 *** Review of DOM
 Use beginning and end tags
