@@ -317,4 +317,242 @@ The HTML validator used in the video is [[https://validator.w3.org][validator.w3
 #+END_SRC
 
 ** Images
+Lots of image types (jpg, png, gif, svg, bmp, more)
+
+Lots of attributes in the =<img>= tag, as well.
+
+Image type is important. Always include the file extension of the image (.jpg, etc.)
+
+*** Image Size
+Pixel size: how big is the box (in pixels) that the image has to display
+
+When deciding how big or small you want your image, there are two wuick options: change the actual file, or use attributes.
+
+image editors (Photoshop, Paint, Preview (macOS)) make permanent changes to the image.
+
+Pros of editors:
+
+- file size reflects the image size
+
+Cons:
+
+- Can only change "local" files - files that are on your machine
+
+- Cannot quickly resize images for other uses
+
+Using HTML attributes is much easier. Mandating =<img>= sizes is so common that using the =height= and =width= attributes are supported directly in the =<img>= tag.
+
+#+BEGIN_SRC html
+<figure>
+  <img src="my_pic.jpg"
+       alt="picture of me"
+  <figcaption>A default size picture of me</figcaption>
+</figure>
+
+<figure>
+  <img src="my_pic.jpg"
+       alt="picture of me"
+       height="400px"
+       width="300px" />
+  <figcaption>A resized picture of me</figcaption>
+</figure>
+
+<figure>
+  <img src="my_pic.jpg"
+       alt="picture of me"
+       width="50%" />
+  <figcaption>A half-wide picture of me</figcaption>
+</figure>
+#+END_SRC
+
+Sizing elements takes trial and error. You won;t usually want to use hardcoded picture size, but for simpler sites it can be quick and easy. Percents are usually better in the general case, as it takes into account the display size (great for mobile devices).
+
+**** Favicon
+Favicons are pictures that appear in the title of the page, up in the tab bar. You can only have 1 per page. You need to include it up in the =<head>= section, like so:
+
+#+BEGIN_SRC html
+<head>
+  <link rel="icon" type="image/png" href="my-favicon.png" />
+</head>
+#+END_SRC
+
+Favicons are optional, but most big sites have them.
+
+**** Alternative Text
+aka the =alt= attribute. These are used by screenreaders (accessibility) and search engines to figure out what is in the image. Tips for good alt text:
+
+- be accurate
+
+- be concise
+
+- avoid redundancy
+
+- don't include "picture of ..." or similar phrases, as that is redundant (it's in an =<img>= tag already, they know it's a picture)
+
+- Sometimes leaving alt text empty is fine. Logos and page decoration don't need alt text. Only the pictures in the main content do. However, don't skip the attribute. Use empty quotes:
+
+#+BEGIN_SRC html
+<img src="my-picture.jpg" alt="">
+#+END_SRC
+
+
+*** Anchor Tags (Links)
+Links - =<a>= - need two main parts:
+
+- The "hyper-reference" (=href=)
+
+- The link text (human readable, the part that gets clicked)
+
+Links are really easy to mess up (typo, etc.). When building your web sites, always test your links.
+
+There are 4 types of links
+
+**** Absolute Links
+#+BEGIN_SRC html
+<a href="https://www.coursera.org">Coursera</a>
+#+END_SRC
+
+Absolute links are when you have the fully formed URL. These are the most common link, and needed in order to link to sites on a different domain.
+
+**** Relative Links / Internal
+
+These links can only link to places on the same site.
+
+#+BEGIN_SRC html
+<a href="page2.html">Second Page</a>
+<a href="docs/page2.html">Second Page</a>
+<a href="#history">Jump to History</a>
+
+<p id="history">history section, for example</p>
+#+END_SRC
+
+In order:
+
+- A link to a document in the same folder as the one we are currently viewing
+
+- A link to a file in the docs folder, where the docs folder is in the same folder as the page we are viewing
+
+- A link to a different section of the page we are on (example: Wikipedia uses tons of these on each page). These use the =id= attribute to differentiate between parts of the page.
+
+Relative links are pretty useful when developing sites, but once a site is "finished", absolute links are just as good.
+
+However: never link into the file system of your computer. These links will almost always break.
+
+**** Graphical Links
+
+You can use an image instead of text. Like so:
+
+#+BEGIN_SRC html
+<a href="https://en.wikipedia.com">
+  <img src="some-picture.png" alt=""/>
+</a>
+#+END_SRC
+
+Now, clicking on the picture lets the user follow the link.
+
+Make sure your alt text is informative about both the link and the picture.
+
+
+**** Link Targets
+You can have links open in different ways:
+
+#+BEGIN_SRC html
+<a href="https://www.coursera.org" target="_self">Coursera</a>
+<a href="https://www.coursera.org" target="_blank">Coursera</a>
+#+END_SRC
+
+=_self= is default, and you should almost always use this. This is the expected behavior when someone clicks a link.
+
+=_blank= opens a new tab or window for the page you linked to. This tends to irritate people, as its unexpected ad sometimes jarring. Many web developers heavily discourage using this, and it is viewed as hostile to the user.
+
+=_top= and =_parent= are to other options, but we won't cover those. They are only useful when you are determined to open new tabs and windows, and force the users attention to the newly opened page. aka, this is extremely hostile to the user.
+
+
+*** Multimedia
+Video and Audio
+
+Designers tend to love these (look how cool our site is!)
+
+User tend to hate these (Shut up with your bad music and stupid video)
+
+There is a middle ground, like with Youtube. The key is to be very disciplined with these. If you overuse these elements, your users will hate you and never go to our site. On the contrary, there is almost no downside with not using these. Lots of website have no music and no video, and are perfectly enjoyable and usable.
+
+Real world example: Facebook tried autoplaying all the videos on their site. When you scrolled down the page, you would end up with dozens of videos playing at the same time. It was a disaster for everyone.
+
+Prior to HTML5, there wasn't a good way to include these sorts of elements.
+
+**** HTML5 Video
+
+=<video>=
+
+These use a =src= attribute, like =<img>= , to identify the video file
+
+Common attributes:
+
+- height, width
+
+- autoplay - always set this to false, or your users will hate you
+
+- loop - do you want the video to start over when it finishes? usually no
+
+- controls - are the pause/play controls visible? usually yes
+
+For autoplay, loop, and controls, you only need to include the attribute (if you want them to be "on". You don't need to assign them any value. These are called "boolean" attributes. They are either true (present) or false (not there).
+
+If the browser does not support the =<video>= tag, it will display any text inside the =<video>= tag instead.
+
+You can also tell the video to start at a specific point, by adding a =.ext#= to the end of the =src= attribute. I'll include some examples of this.
+
+#+BEGIN_SRC html
+<video src="movie.mp4"
+       height="100%"
+       width="100%"
+       controls>
+  you see this if your browser doesn't support video
+</video>
+
+<video src="movie.mp4.ext#t=1,24" controls></video>
+#+END_SRC
+
+**** Audio
+
+Similar to =<video>=
+
+#+BEGIN_SRC html
+<audio src="music.mp3"
+       controls
+       buffered
+       volume></audio>
+
+<audio src="music.mp3.ext#t=1,15" controls>
+#+END_SRC
+
+**** Plugins
+
+We don't really use plugins too much anymore, they caused too many problems for too little benefit. Some of the more prominent ones included
+
+- Adobe Flash
+
+- Microsoft Silverlight
+
+- Microsoft ActiveX
+
+- Apply Quicktime
+
+These are almost entirely dead now, except Apply is trying to keep Quicktime for some reason. It isn't good though, and you should avoid it at all costs.
+
+
+*** Tables
+
+
+
+
+
+
+
+
+
+
+
+
 
