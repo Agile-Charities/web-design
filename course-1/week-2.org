@@ -3,10 +3,14 @@
 We call the structure of a web page the DOM. It's a tree-like
 structure, which basically means that the =<html>= tag is at the top, and all other tags are inside of it (the video gives a nice graphic, at 1:03).
 
+Here's some HTML code that you can refer to while we discuss the different parts of the DOM. By typing this into a file on your computer and opening it in your browser, you'll be able to see how each part of the code contributes to the web page.
+
 #+BEGIN_HTML
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <title>My Web Page</title>
   </head>
   <body>
     <p>content goes here</p>
@@ -14,6 +18,20 @@ structure, which basically means that the =<html>= tag is at the top, and all ot
 </html>
 #+END_HTML 
 
+*** =<!DOCTYPE html>=
 There used to be a lot of =DOCTYPE= s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
+
+*** =<head>=
+The =<head>= tag contains metadata for the browser. Humans aren't going to read this, but there are a lot of tools (like Google Search) that read metadata to try to figure out what sort of content is on the page.
+
+Examples of metadata that we put in the =<head>= tag are the language our page is in and the title of our page (the title is what you see when you look at the page's browser tab).
+
+This is also where you include stylesheets (CSS) and JavaScript that your page relies on. We'll talk more about CSS and JS in courses 2 and 3, respectively.
+
+*** =<body>=
+The majority of web site content lives inside the =<body>= tag. It's very important to maintain the tree-like structure of the DOM in here, or else your web page will render wrongly.
+
+The tree-like structure means that each element is a "child" element of a "parent" element. A parent element can have any number of child elements, and child elements can also be the parent of other child elements.
+
 
 
