@@ -5,7 +5,7 @@ structure, which basically means that the =<html>= tag is at the top, and all ot
 
 Here's some HTML code that you can refer to while we discuss the different parts of the DOM. By typing this into a file on your computer and opening it in your browser, you'll be able to see how each part of the code contributes to the web page.
 
-#+BEGIN_HTML
+#+BEGIN_SRC html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +16,7 @@ Here's some HTML code that you can refer to while we discuss the different parts
     <p>content goes here</p>
   </body>
 </html>
-#+END_HTML 
+#+END_SRC
 
 *** =<!DOCTYPE html>=
 There used to be a lot of =DOCTYPE= s, but HTML5 simplified it all down to one. =DOCTYPE= declaration say what kind of document this is. Nowadays, it's just HTML5, but there used to be stuff like =XHTML= and =DHTML=, and they all had their own versions.
