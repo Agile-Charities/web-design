@@ -23,6 +23,8 @@ There used to be a lot of =DOCTYPE= s, but HTML5 simplified it all down to one. 
 
 We'll always use =<!DOCTYPE html>=, so don't worry about the other ones.
 
+After we declare that we're writing an HTML file, we open up an =<html>= tag. We don't close this tag until the very end of the file, as it includes all to the other tags as child elements. More on that when we talk about the =<body>= section.
+
 *** =<head>=
 The =<head>= tag contains metadata for the browser. Humans aren't going to read this, but there are a lot of tools (like Google Search) that read metadata to try to figure out what sort of content is on the page.
 
@@ -48,12 +50,6 @@ The tree-like structure means that each element is a "child" element of a "paren
 <body>
   <h3>This is some content</h3>
   <ul>
-    <li>This is a list item</li>
-    <li>The 'ul' tag means "make an Unordered List</li>
-    <li>And we add list elements with the 'li' tag</li>
-    <li>As an example of a well formed DOM, note where we end the 'ul' and 'li' tags. See how the 'ul' elements contains all of 'li' elements?</ul>
-    <li>The 'ul' is the parent elements of the 'li' elements, so all the 'li' elements are inside the 'ul' element</li>
-    <li>I'll render this code just below here, so you can see it in action.</li>
   </ul>
 </body>
 #+END_SRC
@@ -65,15 +61,108 @@ The tree-like structure means that each element is a "child" element of a "paren
   <h3>This is some content</h3>
   <ul>
     <li>This is a list item</li>
-    <li>The 'ul' tag means "make an Unordered List</li>
-    <li>And we add list elements with the 'li' tag</li>
-    <li>As an example of a well formed DOM, note where we end the 'ul' and 'li' tags. See how the 'ul' elements contains all of 'li' elements?</ul>
-    <li>The 'ul' is the parent elements of the 'li' elements, so all the 'li' elements are inside the 'ul' element</li>
+    <li>The &lt;ul&gt; tag means "make an Unordered List</li>
+    <li>And we add list elements with the &lt;li&gt; tag</li>
+    <li>As an example of a well formed DOM, note where we end the &lt;ul&gt; and &lt;li&gt; tags. See how the &lt;ul&gt; elements contains all of &lt;li&gt; elements?</ul>
+    <li>The &lt;ul&gt; is the parent elements of the &lt;li&gt; elements, so all the &lt;li&gt; elements are inside the &lt;ul&gt; element</li>
     <li>I'll render this code just below here, so you can see it in action.</li>
   </ul>
+<br />
 </body>
 #+END_HTML
 
 (end of rendered HTML)
+
+*** Review of DOM
+Use beginning and end tags
+
+Close inner (child) tags before outer (parent) tags
+
+When using attributes, make sure you are using valid attributes.
+
+Browsers will try to fix bad code, but they don't always do it well. Sometimes the browser trying to fix your code can screw up the whole layout and structure of your site, so be careful about relying on your browser to fix things.
+
+
+** HTML Tags
+Where we finally start making interesting pages.
+
+There are loads of tags, so we will only cover the most used tags and talk about places where you can find all of the available tags.
+
+*** Syntax (boring, but necessary)
+(Almost) every tag has a beginning and end. Some tags self-close.
+
+#+BEGIN_SRC html
+<h1>Hello World!</h1>
+
+<img src="picture.jpg" />
+
+<a href="https://en.wikipedia.com">Link to Wikipedia</a>
+#+END_SRC
+
+The =<h1>= tag uses the normal open/close style, but the =<img>= uses the self-closing style. We can also see that some tags have attributes. =<img>= needs to know what picture it should be, so it needs the =src= attribute. We've also seen the =<a>= tag, which uses the open/close style, and needs the =href= tag to tell it what website to link to.
+
+It's important that every self-closing tag ends with =/>= . That slash is important, because browsers can mess up with closing that tag and then half your page will disappear.
+
+Certain tags display in different ways. Some tags are =display: block= , which means that they start on a new line, after anything that came before them. The other kind is =display: inline=, which mean they follow content without needed a new line. Things like headers and paragraphs (=<h1>= , =<p>=) are =display: block=, whereas things like links =<a>= are =display: inline= . We'll learn more about display in Course 2, when we talk about CSS.
+
+*** Common Tags
+Header tags: =<h1>= , =<h2>= , ..., =<h6>=
+
+Paragraphs: =<p>=
+
+Divs: =<div>=
+
+Lists: =<ol>= , =<ul>= , =<li>=
+
+Line breaks: =<br />=
+
+Images: =<img>=
+
+Links: =<a>=
+
+When tags need attributes, we always (ALWAYS) put them in the opening tag. Attributes always come in name/value pairs. In the following image tag, note the two attributes and their value.
+
+#+BEGIN_SRC html
+<img src="myPicture.jpg" title="Image of a dog" alt="dog" />
+#+END_SRC
+
+The =src= attribute says what picture to display. Frequently, when making web sites, =<img>= tags will display a "broken link" picture, which means that they cannot find the file your told them to display. This is normal, and just means you need to make sure you are pointing the =src= to the right spot.
+
+The =title= attribute adds a hidden caption to an image. If you hover your mouse over an image with an =title= attribute, floating text will appear. In this case, the text will be "Image of a dog".
+
+=<alt>= text is for screenreaders and broken links. This text will be read aloud by a screenreader, and makes your site accessible to people who are visually impaired.
+
+
+*** Common Attributes
+
+=class= applies extra formatting. We'll cover this more later.
+
+=id= assigns an ID to the element. You want your =id= s to be unique. This is very useful when using JavaScript, which we'll come to later. 
+
+=class= assigns a CSS class to the element. Again, we'll cover this in depth when we talk about CSS.
+
+=style= lets you write CSS inline with the element, but it's not something we want to use. It only still exists for legacy reasons (backwards compatibility with old web sites), and using it is strongly discouraged. Modern practice is to only use CSS in CSS files.
+
+=accesskey= is primarily for accessibility, and asigns a shortkey key to activate the element. Useful for buttons and links.
+
+=tabindex= describes the order of elements to focus when using the =TAB= key to move around the site. This is important for accessibility. Lower numbers come first in the order. =1=, then =2=, then =3=, and so on.
+
+
+*** Special Entities
+We use characters like =<= to open tags, so how do we include them in text we want to display?
+
+| If you want    | Then use the text |
+|----------------+-------------------|
+| =<=            | =&lt;=            |
+| =>=            | =&gt;=            |
+| Copyright sign | =&copy;=          |
+| blank space    | =&nbsp;=          |
+| cents sign     | =&cent;=          |
+| =&=            | =amp;=            |
+
+Generally speaking, you'll want to Google these when you need them. Remembering them all is tedious, but you'll probably end up remembering =&nbsp;= (non-breaking space) as it can come up fairly often.
+
+
+
 
 
