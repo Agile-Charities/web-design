@@ -14,6 +14,8 @@ A profession concerned with making sure technology is available to everyone, reg
 
 Most companies have these sorts of employees, as the Americans with Disabilities Act requires accessibility. ~60 million Americans have some kind of disability, so there is always needs for accessibility. About half have difficulties using the internet.
 
+** Disabilities to be aware of
+
 - Visual issues
   - Blindness, low-vision, color blindness
   - font size, color contrast, fonts, etc.
@@ -30,7 +32,6 @@ Most companies have these sorts of employees, as the Americans with Disabilities
   - ADD/ADHD ~16 million Americans
   - PTSD and related issues
   - there are more people with cognitive issues than all people with physical issues combined.
-  - advice - boring pages. Make them easy to read and use, avoid flashy stuff. Consider Google Search page as an example of good looking but very simple and easy.
 
 Video contains many stats about how many people have difficulties.
 - 40% elderly have a disability
@@ -38,16 +39,35 @@ Video contains many stats about how many people have difficulties.
 
 W3C WCAG 2.0 - W3C Web Content Accessibility Guidelines
 
-
-
-
-** Disabilities and the web
-
-
-** Principles for accessible websites
+advice - boring pages. Make them easy to read and use, avoid flashy stuff. Consider Google Search page as an example of good looking but very simple and easy.
 
 
 * Validation
+Validation is a process that makes it easy to find errors and problems in our sites. Making mistakes and having errors is normal, and finding and fixing them is a normal part of development.
+
+
+** HTML validation
+https://validator.w3.org
+
+Three methods to check code:
+- Validate by URI/URL
+  - Tell the validator to get the contents of a URL
+  - Useful for dynamically generated pages (we haven't talked about these yet)
+- Validate by File
+  - Upload a file for the validator to check
+  - Useful for checking our full sites
+- Validate by Direct Input
+  - Copy/paste the code into the validator
+  - Useful for checking a small piece of HTML code
+
+Error propogate. That is, errors at the top can make the validator think there are additional errors in later parts. Fix the top-most errors first, so that they don't influence the rest of the document.
+
+If you are having difficulties fixing your code, look at the error messages and do some google searches for the error message. Many times, copy/pasting the error will take you to a solution.
+
+Many sites have errors and fail validation. This can cause usage problems. We've all used horrible sites where things don't work, or are really slow, or where content doesn't load. These are all caused by not validating the website before putting it on the internet.
+
+** Accessibility validation
+https://wave.webaim.org
 
 
 * Putting your site on the web
