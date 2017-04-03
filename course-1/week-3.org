@@ -69,13 +69,44 @@ Many sites have errors and fail validation. This can cause usage problems. We've
 ** Accessibility validation
 https://wave.webaim.org
 
+Can only validate by URL
+
 
 * Putting your site on the web
 
+Things you need:
+- Domain Name (the site name in the URL)
+- Host. Lots of different kinds of these
 
+** Domain Names
+Buy domain names from Domain Registrars, like the following.
+
+https://gandi.net
+
+https://namecheap.com
+
+Domain names are not free, and you have to pay for them on a yearly basis (unless you buy several years of ownership at a time).
+
+Many kinds of TLDs. =.com= is the most common, =.org= and =.net= are also common. =.edu= for education, =.gov= for government, etc.
+
+** Hosting
+Host make sure your files are available to the internet, and point your domain to your files (aka your web page). That is, when you type your domain name into the URL bar, the host and DNS will make sure that people see your web page.
+
+Different kinds:
+- Free (limited rate, may not allow your own domain name, no support, ads)
+- Mid-range (fairly cheap, minimal services / support)
+- full-service (expensive, lots of services, high quality support)
+
+Many domain registrars offer hosting services, and it can be easier to buy and host your domain from the same company.
+
+Lecturer recommends https://byethost.com (that is =byet=, not a typo). I have not used this, though I can try to help you through it if you decide to use it.
 
 ** Github Pages (not covered in the coursera videos)
-show trobertson.github.io (aka my page) and build a final project style site, upload during next section progress.
+Free-tier host. I do not get my own domain name, but I do get a subdomain.
+
+This one is very oriented to programmers, I do not recommend it for new developers.
+
+https://trobertson.github.io
 
 * Final Project
 Discuss the course's project expectations, refer to coursera description
@@ -83,6 +114,8 @@ Discuss the course's project expectations, refer to coursera description
 To do in class:
 
 - Create a site for an Animal Rescue group
+
+- Upload content to trobertson.github.io as I build it
 
 - Main page
 
