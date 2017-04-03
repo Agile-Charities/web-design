@@ -5,7 +5,7 @@ Today is primarily about building a web page. We'll also talk about some accessi
 I'll keep this brief in the lecture.
 
 ** Web Accessibility Professional
-A profession concerned with making sure technology is available to everyone, regardless of disabilities.
+A profession concerned with making sure technology is available to everyone, regardless of disabilities. This profession has become required for large companies, so it's a nice opportunity for those new to tech. Department of Justice (DoJ) is revising the Americans with Disabilities Act (ADA) to include online resources. UC Berkeley already got in trouble for not abiding by the ADA with some web content.
 
 - Guide and advise policy and purchasing decisions
 - evaluate interfaces for accessibility
@@ -15,16 +15,29 @@ A profession concerned with making sure technology is available to everyone, reg
 Most companies have these sorts of employees, as the Americans with Disabilities Act requires accessibility. ~60 million Americans have some kind of disability, so there is always needs for accessibility. About half have difficulties using the internet.
 
 - Visual issues
-  - Blindness
-  - low-vision
-  - color blindness
-  - Can be worked around through font size, color contrast, fonts, etc.
+  - Blindness, low-vision, color blindness
+  - font size, color contrast, fonts, etc.
 - Hearing Issues
   - UC Berkeley just got in trouble for not having closed captions on posted lectures
   - primarily deafness
   - Ensure closed captions, avoid loud audio
 - Motor issues
+  - difficulty using mouse or keyboard, slow response time, limited motor control
+  - physical injuries
+  - tabindex, size of clickable elements, etc.
 - Cognitive issues
+  - learning disabilities, reading disabilities, epilepsy, distraction
+  - ADD/ADHD ~16 million Americans
+  - PTSD and related issues
+  - there are more people with cognitive issues than all people with physical issues combined.
+  - advice - boring pages. Make them easy to read and use, avoid flashy stuff. Consider Google Search page as an example of good looking but very simple and easy.
+
+Video contains many stats about how many people have difficulties.
+- 40% elderly have a disability
+- 8.3% of people have 2 or more disabilities
+
+W3C WCAG 2.0 - W3C Web Content Accessibility Guidelines
+
 
 
 
