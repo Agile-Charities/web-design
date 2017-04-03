@@ -1,0 +1,63 @@
+* Week 3 (Last week of HTML)
+Today is primarily about building a web page. We'll also talk about some accessibility stuff and about hosting our own webpages.
+
+* Accessibility and disabilities
+I'll keep this brief in the lecture.
+
+** Web Accessibility Professional
+A profession concerned with making sure technology is available to everyone, regardless of disabilities.
+
+- Guide and advise policy and purchasing decisions
+- evaluate interfaces for accessibility
+- assist people with disabilities with getting access to technology
+- keep pace with changing technology
+
+Most companies have these sorts of employees, as the Americans with Disabilities Act requires accessibility. ~60 million Americans have some kind of disability, so there is always needs for accessibility. About half have difficulties using the internet.
+
+- Visual issues
+- Hearing Issues
+  - UC Berkeley just got in trouble for not having closed captions
+- Motor issues
+- Cognitive issues
+
+
+
+** Disabilities and the web
+
+
+** Principles for accessible websites
+
+
+* Validation
+
+
+* Putting your site on the web
+
+
+
+** Github Pages (not covered in the coursera videos)
+show trobertson.github.io (aka my page) and build a final project style site, upload during next section progress.
+
+* Final Project
+Discuss the course's project expectations, refer to coursera description
+
+To do in class:
+
+- Create a site for an Animal Rescue group
+
+- Main page
+
+  - description of group
+
+  - table of info for each animal (link, name, age, weight, etc.)
+
+  - fake contact info
+
+- Page for each animal (2 dogs, 2 cats)
+
+  - Figure (picture + caption)
+
+  - table of info (same as above)
+
+- Navigation between main page and pet pages
+

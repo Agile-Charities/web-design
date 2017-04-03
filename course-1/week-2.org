@@ -552,16 +552,16 @@ When you start working with =<table>=, you need to figure out a few things. The 
 
 =<td>= is one cell in a single row
 
-=<th>= is a heading row. It works similarly to =<tr>=, but it goes at the top.
+=<th>= is a heading cell. It works similarly to =<td>=, but it goes in the topmost row.
 
 #+BEGIN_SRC html
 <table>
-  <th>
-    <td>URL</td>
-    <td>Protocol</td>
-    <td>Domain</td>
-    <td>Path</td>
-  </th>
+  <tr>
+    <th>URL</td>
+    <th>Protocol</td>
+    <th>Domain</td>
+    <th>Path</td>
+  </tr>
   <tr>
     <td>https://en.wikipedia.com/wiki/HMTL</td>
     <td>HTTPS</td>
@@ -581,10 +581,10 @@ If you need larger cells, you can use the =rowspan= and =colspan= attributes to 
 
 #+BEGIN_SRC html
 <table border="1">
-  <th>
-    <td>Child's Name</td>
-    <td>Parent's Name</td>
-  </th>
+  <tr>
+    <th>Child's Name</td>
+    <th>Parent's Name</td>
+  </tr>
   <tr>
     <td rowspan="2">Jeff</td>
     <td>Amy</td>
