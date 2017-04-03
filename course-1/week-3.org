@@ -15,8 +15,14 @@ A profession concerned with making sure technology is available to everyone, reg
 Most companies have these sorts of employees, as the Americans with Disabilities Act requires accessibility. ~60 million Americans have some kind of disability, so there is always needs for accessibility. About half have difficulties using the internet.
 
 - Visual issues
+  - Blindness
+  - low-vision
+  - color blindness
+  - Can be worked around through font size, color contrast, fonts, etc.
 - Hearing Issues
-  - UC Berkeley just got in trouble for not having closed captions
+  - UC Berkeley just got in trouble for not having closed captions on posted lectures
+  - primarily deafness
+  - Ensure closed captions, avoid loud audio
 - Motor issues
 - Cognitive issues
 
