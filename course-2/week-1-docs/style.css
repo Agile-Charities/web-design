@@ -1,0 +1,23 @@
+h1 {
+    color: blue; /* easy colors (somewhat rare) */
+    background-color: #eeffdd; /* hexadecimal colors (common) */
+    font-family: sans-serif;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 16;
+    font-family: Arial;
+}
+
+/* A CSS class */
+.example-class {
+    color: white;
+    background-color: black;
+}
+
+/* A CSS ID */
+#example-id {
+    color: red;
+    backgrond-color: yellow;
+}

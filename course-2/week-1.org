@@ -1,0 +1,145 @@
+* CSS - Week 1
+** course overview
+Cascading Style Sheets
+
+syntax (ugh)
+
+dev tools
+
+Accessibility concerns
+
+Week 1 - Basic styling and placement
+
+Week 2 - Box Model (placement) and more styling
+
+Week 3 - Pseudo Classes and Elements, transitions / transforms, placement
+
+Week 4 - Examples, practice, project
+
+As always, people who practice learn the most
+** Cascading Styles Sheets
+Plain HTML looks really boring. CSS lets us make good looking pages.
+
+*** Bad Practice: =<style>= attribute
+Nowadays, you should not do this. That said, a lot of old sites do this, so be aware that it exists. It is also easy, so a lot of beginners do this, not realizing that it's a bad practice.
+
+#+BEGIN_SRC html
+<h1 style="color:blue">Blue Heading</h1>
+#+END_SRC
+
+#+BEGIN_HTML
+<hr />
+<h1 style="color:blue">Blue Heading</h1>
+<hr />
+#+END_HTML
+
+Why not use this method? It breaks the separation of content and style. When you mix them up, things become difficult to follow, and it can be difficult to determine what is and isn't styled by a particular rule.
+
+*** Cascading Style Sheets
+A file that determines how you want to styles the elements of your page. This file can define rules that apply to multiple elements, or very specific elements.
+
+Here is the styling for the above example, done in a CSS file (=.css= extension).
+
+#+BEGIN_SRC css
+h1 {
+    color: blue;
+}
+#+END_SRC
+
+The basic format is as follows:
+
+#+BEGIN_SRC css
+selector {
+    property1: value1;
+    property2: value2;
+    /* ... */
+    property500: value500;
+}
+
+/* This is a comment, the browser ignores this */
+#+END_SRC
+
+The punctuation is important. The ={=, =}=, =:=, =;= keys are all on the right hand side of you keyboard, around the =ENTER= key.
+
+=selector= is the tag name. For an =<h1>= tag, the selector is =h1=. This pattern always holds, so you will always know what selectors to use for your elements.
+
+Properties are things like =color=, =border=, etc. We'll talk about the common ones, and where to find the properties that are specific to certain elements.
+
+*** Using CSS files to change our HTML pages
+
+There are two ways: internal style sheets (bad), and external style sheets (good).
+
+
+**** Internal Style Sheets
+#+BEGIN_SRC html
+<head>
+  <meta charset="UTF-8">
+  <title>Title Here</title>
+  <style>
+    h1 {
+        color: blue;
+    }
+  </style>
+</head>
+#+END_SRC
+
+The =<style>= tag lets your write CSS right inside your HTML file. This tag can only be used inside the =<head>= section, otherwise the browser will ignore it.
+
+This is a discouraged style of CSS because it only applies to one page. Most websites have many pages, and it doesn't make sense to copy and paste the same CSS thousands of times. Instead, we use a separate file for our CSS, and =<link>= that CSS file, letting the browser know that it applies to our HTML page.
+
+**** External Style Sheets
+
+#+BEGIN_SRC html
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+#+END_SRC
+
+When you have a CSS file (in this case I'm calling it =style.css=), you can tell the browser to apply it to your page by using the =<link>= tag. The above is a good thing to have in your template, because the only part of it you'll ever change is the value of the =href= (you want it to point to the correct stylesheet).
+
+You can have multiple stylesheets on the same page, just make an additional =<link>= for each stylesheet.
+
+Check out the [[./week-1-docs/style.css][style.css]] over in the =week-1-docs= folder. It'll give you an idea of what a CSS file looks like.
+
+** What does "Cascading" mean?
+The borswer styles elements in the following order:
+
+1. Browser Defaults (ugly)
+2. External Style sheets (what you should use)
+3. Internal Style sheets (don't use!)
+4. Inline =style= attribute (don't use!)
+
+This means that a rule in a =style= attribute overwrites the rules of the internal style sheet, which overwrite the rules of the external stylesheet, which overwrites the default browser appearance.
+
+You can see why people have standardized on using only external sheets. By only using one place for styling, it is easy to figure out what CSS rules are being applied to the elements.
+
+What if there are multiple external CSS files that conflict? Then the most recent file is the winner. The most "recent" means the one that loads last. So in the following example
+
+#+BEGIN_SRC html
+<head>
+  <link rel="stylesheet" href="style_one.css">
+  <link rel="stylesheet" href="style_two.css">
+  <link rel="stylesheet" href="style_three.css">
+</head>
+#+END_SRC
+
+the CSS file named =style_three.css= is considered the most recent, so if any conflicts occur, it will be file that the browser defers to.
+
+Same thing if there are conflicting rules in a file. The most recent rule (aka the rule closest tot he end of the file) will be the winning rule. This can happen a lot, especially in large teams. Using your text editor's search function (=Ctrl-F= for Windows and =Command-F= for macOS) will help you avoid duplicating rules.
+
+There is a way to ensure that a rule gets applied. This is universally considered a bad practice, but many beginners use it. It is considered bad because it breaks the way that CSS works, by preventing cascade from occurring as expected.
+
+#+BEGIN_SRC css
+h1 {
+    font-family: Arial !important;
+}
+#+END_SRC
+
+The =important!= is the thing that breaks CSS behavior. It tells the browser to apply that rule, no matter what any other rule says.
+
+
+** 
+** 
+** 
+
+
