@@ -29,12 +29,6 @@ Nowadays, you should not do this. That said, a lot of old sites do this, so be a
 <h1 style="color:blue">Blue Heading</h1>
 #+END_SRC
 
-#+BEGIN_HTML
-<hr />
-<h1 style="color:blue">Blue Heading</h1>
-<hr />
-#+END_HTML
-
 Why not use this method? It breaks the separation of content and style. When you mix them up, things become difficult to follow, and it can be difficult to determine what is and isn't styled by a particular rule.
 
 *** Cascading Style Sheets
@@ -197,16 +191,16 @@ h1 {
 #+END_SRC
 
 
-**** Serif and Sans-Serif
+*** Serif and Sans-Serif
 Serif fonts have the fancy edges, while the sans-serif fonts have plain lines. Generally speaking, sans-serif fonts are easier to read. For paragraph text, you should avoid serif fonts. However, serif fonts look pretty good in titles, so they have a use case.
 
-**** Custom Fonts
+*** Custom Fonts
 Your browser doesn't know all the fonts, so you will sometimes want to use a custom font. Here is the CSS code that lets you pull a custom font from somewhere else on the internet. Be careful, though, as font files are large and require a long-ish time to download.
 
 #+BEGIN_SRC css
 @font-face {
     font-family: myCoolFont;
-    src: url('myCoolFont.ttf);
+    src: url('myCoolFont.ttf');
 }
 
 h1 {
@@ -216,7 +210,7 @@ h1 {
 
 For now, don't worry too much about this special syntax. We'll talk about it later in the course.
 
-**** font-style, font-variant, font-size
+*** font-style, font-variant, font-size
 Here's a few examples of font-style:
 
 - normal
@@ -246,11 +240,11 @@ h1 {
 }
 
 p {
-    font-size: 16;
+    font-size: 22px;
 }
 #+END_SRC
 
-**** Colored Text
+*** Colored Text
 =color= is the color of the text. =background= is the color of the background (think highlighter).
 
 #+BEGIN_SRC css
@@ -260,8 +254,7 @@ h1, span {
 }
 #+END_SRC
 
-
-**** Text alignment
+*** Text alignment
 This is pretty simple. Default is =left=
 
 - left
@@ -275,8 +268,7 @@ p {
 }
 #+END_SRC
 
-
-**** line-height
+*** line-height
 How tall a line of text is. You'll frequently want this at =1.6= for body text as it is a very readable line height.
 
 ** Display, visibility
