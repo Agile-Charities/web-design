@@ -20,6 +20,8 @@ As always, people who practice learn the most
 ** Cascading Styles Sheets
 Plain HTML looks really boring. CSS lets us make good looking pages.
 
+Before we start, remember to open up the Mozilla Developer Network in a new tab. They have fantastic documentation for all of the CSS features.
+
 *** Bad Practice: =<style>= attribute
 Nowadays, you should not do this. That said, a lot of old sites do this, so be aware that it exists. It is also easy, so a lot of beginners do this, not realizing that it's a bad practice.
 
@@ -68,7 +70,6 @@ Properties are things like =color=, =border=, etc. We'll talk about the common o
 *** Using CSS files to change our HTML pages
 
 There are two ways: internal style sheets (bad), and external style sheets (good).
-
 
 **** Internal Style Sheets
 #+BEGIN_SRC html
@@ -135,11 +136,190 @@ h1 {
 }
 #+END_SRC
 
-The =important!= is the thing that breaks CSS behavior. It tells the browser to apply that rule, no matter what any other rule says.
+The =important!= is the thing that breaks CSS behavior. It tells the browser to apply that rule, no matter what any other rule says. Again, this is really bad to do.
+
+** Colors
+One of the most common ways that people describe things is in terms of color. It may be an unusual thing to say, but colors are kind of weird. We have a few different ways to pick and choose which colors we want to use:
+
+- Color names (red, blue, green, etc.) This method is uncommon, and should be avoided, as each browser may disagree on which exact blue (or whatever) we are talking about. Also, not all colors have names like this.
+
+- Hexadecimal colors. These are the most common, and the most highly encouraged, way to pick colors. They are also not very intuitive. Hex colors represent colors in terms of quantity of red, green, and blue. Each can have between =00= and =FF=, where =00= is none and =FF= is max.
+
+  | red       | green     | blue      | yellow    |
+  |-----------+-----------+-----------+-----------|
+  | =#FF0000= | =#00FF00= | =#0000FF= | =#FFFF00= |
+
+- RGB. similar to hex colors, but a little easier to understand. Not common, but better than color names. Instead of =00= through =FF=, we use percents (aka, between =0.0= and =1.0=)
+
+  | red         | green       | blue        | yellow      |
+  |-------------+-------------+-------------+-------------|
+  | =(1, 0, 0)= | =(0, 1, 0)= | =(0, 0, 1)= | =(1, 1, 0)= |
+
+- RGBA. Very useful, as the =A= at the end means "alpha" which means transparency.
+
+  | red            | red, half transparent | red, invisible |
+  |----------------+-----------------------+----------------|
+  | =(1, 0, 0, 1)= | =(1, 0, 0, .5)=       | =(1, 0, 0, 0)= |
+
+(do examples in class, modifying [[./style.css][style.css]])
+
+*** Useful Color Resources
+It is difficult to guess and check your way to the right color, so there are a few different ways to get the right color:
+
+- Browser tools often include a color picker, which will provide the hex value of the color
+
+- There are many sites that can convert between the various color types. Google for "hex color picker" or something similar, and you'll get lots of easy to use sites.
+
+*** Accessibility
+Many people are colorblind, and cannot distinguish between certain colors. Men, in particular, are frequently red-green colorblind. It is therefore useful to use a color pallette that is color-blind friendly. You can find these by Googling, and then just pick one you like.
+
+Furthermore, certain colors have become associated with different things. Red normals means "alert", Green usually means "proceed" or "action", and Blue and Yellow are normally "informational" or "notice". Using standard color choices can help user navigate your site.
+
+** Text
+There are a number of ways to make your text look better. Here's a few:
+
+- font (family, style, variant, size)
+- color and background
+- alignment
+- line-height
 
 
-** 
-** 
-** 
+*** Font Families
+
+Font families are styles of text (Helvetica, Courier, "Courier New", "Comic Sans MS", cursive, Verdana). Multi-word fonts need to be in quotes.
+
+If a browser doesn't support a particular font, you can specify multiple. The browser will use the first font that it has (left to right order)
+
+#+BEGIN_SRC css
+h1 {
+    font-family: Arial, Courier, Verdana, sans-serif;
+}
+#+END_SRC
 
 
+**** Serif and Sans-Serif
+Serif fonts have the fancy edges, while the sans-serif fonts have plain lines. Generally speaking, sans-serif fonts are easier to read. For paragraph text, you should avoid serif fonts. However, serif fonts look pretty good in titles, so they have a use case.
+
+**** Custom Fonts
+Your browser doesn't know all the fonts, so you will sometimes want to use a custom font. Here is the CSS code that lets you pull a custom font from somewhere else on the internet. Be careful, though, as font files are large and require a long-ish time to download.
+
+#+BEGIN_SRC css
+@font-face {
+    font-family: myCoolFont;
+    src: url('myCoolFont.ttf);
+}
+
+h1 {
+    font-family: myCoolFont;
+}
+#+END_SRC
+
+For now, don't worry too much about this special syntax. We'll talk about it later in the course.
+
+**** font-style, font-variant, font-size
+Here's a few examples of font-style:
+
+- normal
+- italic
+- oblique (similar to italic)
+
+And of font-variant:
+
+- normal
+- small-caps
+
+font-size. There is a lot to say about sizes, here is a quick glance:
+
+- use pixel size
+
+Other font-size options that you should avoid:
+
+- xx-small, x-small, small, smaller
+- medium
+- large, x-large, xx-large, larger
+
+
+#+BEGIN_SRC css
+h1 {
+    font-style: italic
+    font-variant: small-caps
+}
+
+p {
+    font-size: 16;
+}
+#+END_SRC
+
+**** Colored Text
+=color= is the color of the text. =background= is the color of the background (think highlighter).
+
+#+BEGIN_SRC css
+h1, span {
+    color: #0000FF; /* blue */
+    background: #B3B3B3; /* gray */
+}
+#+END_SRC
+
+
+**** Text alignment
+This is pretty simple. Default is =left=
+
+- left
+- center
+- right
+- justify
+
+#+BEGIN_SRC css
+p {
+    text-align: left;
+}
+#+END_SRC
+
+
+**** line-height
+How tall a line of text is. You'll frequently want this at =1.6= for body text as it is a very readable line height.
+
+** Display, visibility
+We've talked a bit before about =display: inline= and =display: block=. In short, every element is a box, and the =display= determines how they are arranged. =inline= elements will sit right up next to each other without issue. =block= elements will set up their own space by forcing a line break.
+
+Now that we have some experience with CSS, we can make some changes to the properties of =block= elements. Normally, they take up only as much space as they need. We can now tell it how much space to use, if we don't want the default behavior.
+
+We cannot do the same with =inline= elements, which is kind of lame.
+
+There's also a new thing: =inline-block=. These elements sit like =inline= elements, in that they don't force newlines, but we can also set the height and width as if they were =block= elements.
+
+There is also a fourth: =display: none=. This will remove an element from the page.
+
+The lecture video has a very good visual demonstration of the different display types, so I won't spend a lot of time on them.
+
+*** Float and Clear
+=float= will "float" an element to either the left or the right. This is a common thing for a sidebar. You can =float= to either the =left= or =right=.
+
+#+BEGIN_SRC css
+.sidebar {
+    float: left;
+}
+#+END_SRC
+
+=clear= will stop floating an element. It can take =left=, =right=, or =both=.
+
+*** Overflow
+When you change the size of elements, sometimes content won't fit inside the element. This is called =overflow=, and we can work with it in a couple different ways.
+
+- visible
+- hidden
+- scroll
+- auto
+
+** Other display options
+Various new layout systems are being added. Here are the major ones being considered right now:
+
+Table
+
+Grid
+
+Flexbox
+
+Cool puzzle game to learn flexbox: http://flexboxfroggy.com
+
+You can find out more about these by visiting the Mozilla Developer Network, which describes all of these new systems.
