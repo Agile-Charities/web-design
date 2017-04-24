@@ -101,8 +101,141 @@ common size units:
 - =%= - percent of screen height or width
 
 There are loads of sizings and units of measurements. We aren't going to worry about most of them, but they are all in the documentation (link at the top).
-** Links and Lists
+** Links
+You can do a lot of things with links, but you should always hesitate before making them crazy. Links are _the_ fundamental element of a web page (the entire internet was developed explicitly for links!) and we should always make sure that our links are recognizable as links.
+
+Links are interesting in that they have "states". If you make changes to the styling of these states, those changes must be defined in the following order.
+
+#+BEGIN_SRC css
+a:link {
+    /* normal link (default: blue) */
+}
+
+a:hover {
+    /* a link your mouse is hovering over */
+}
+
+a:visited {
+    /* link to a website you've been to before (default: purple) */
+}
+
+a:focus {
+    /* a link you've TAB-focused */
+}
+
+a:active {
+    /* a link that is being clicked */
+}
+#+END_SRC
+
+
+
+** Lists
+You can do normal stuff like font, color, margin, etc., but you can also do the following.
+
+#+BEGIN_SRC css
+ul {
+    list-style-type: square;
+    list-style-image: square url('picture.jpg');
+}
+#+END_SRC
+
+ =list-style-type= changes the bullet point style.
+
+Ordered list types: lower-roman, upper-roman, decimal-leading-zero, upper-alpha, lower-alpha, hebrew, and many more.
+
+Unordered list types: circle, disk, square
+
+=list-style-image= lets you use a custom image instead of a bullet point. Use the =url('path/to/picture.png')= to point to your picture (replacing =path/to/picture.png= with the path to your picture). You should also set a default (above uses =square= as default)
+
 ** Selectors (advanced)
+
+*** Descendant Selectors
+If you want to say something like "all of =some-tag= inside of =some-other-tag=". This allows for intermediate tags between the two.
+
+#+BEGIN_SRC css
+nav a {
+    /* CSS properites... */
+}
+#+END_SRC
+
+*** Child Selectors
+Like above, but no intermediate tags between the parent and child.
+
+#+BEGIN_SRC css
+nav a {
+    /* CSS properites... */
+}
+#+END_SRC
+
+*** Adjacent siblings
+I have never seen this used. This styles tags that are on the same "level" (a good editor will make these the same code indentation) and follow each other. If they don;t follow each other, the styles don;t apply. I want to repeat: I have never seen anyone use this, anywhere.
+
+#+BEGIN_SRC css
+ul + ol {
+    /* CSS properites... */
+}
+#+END_SRC
+
+*** ID selectors
+Target a specific HTML tag via the =id= attribute. HTML =id=s need to be unique, or they don;t work.
+
+#+BEGIN_SRC html
+<div id="some-id"></div>
+#+END_SRC
+
+#+BEGIN_SRC css
+#some-id {
+    /* CSS properites... */
+}
+#+END_SRC
+
+*** Class Selectors
+Classes are very common. Ultra common. Everyone uses these.
+
+You can give elements a "class" and assign some CSS to that class. You can give a class to as many elements as you want, without restriction (though some properties don't work with all tags).
+
+#+BEGIN_SRC html
+<div class="some-class"></div>
+#+END_SRC
+
+#+BEGIN_SRC css
+.some-class {
+    /* CSS properites... */
+}
+#+END_SRC
+
+You can also make highly targeted class. The following CSS will only apply to =p= tags that have the class =example=
+
+#+BEGIN_SRC css
+p.example {
+    /* CSS properites... */
+}
+#+END_SRC
+
+You can also mix classes into the Descendant and Child selectors:
+
+#+BEGIN_SRC css
+nav a.nav-link {
+    /* CSS properites... */
+}
+
+nav > a.nav-link {
+    /* CSS properites... */
+}
+#+END_SRC
+
+*** Universal Selector
+Don;t ever do this. It will apply the style to every element on the page. This is a BAD IDEA.
+
+#+BEGIN_SRC css
+\* {
+    /* CSS properites... */
+}
+#+END_SRC
+
+
+
 ** Browser Capabilities
 ** Images and Opacity
 
