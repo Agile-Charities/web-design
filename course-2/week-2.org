@@ -229,7 +229,7 @@ nav > a.nav-link {
 Don;t ever do this. It will apply the style to every element on the page. This is a BAD IDEA.
 
 #+BEGIN_SRC css
-\* {
+* {
     /* CSS properites... */
 }
 #+END_SRC
