@@ -1,25 +1,28 @@
-h1 {
-    color: blue; /* easy colors (somewhat rare) */
-    background: #eeffdd; /* hexadecimal colors (common) */
-    font-family: sans-serif;
-    font-style: italic;
-    font-variant: small-caps;
-}
-
 p {
     line-height: 1.6;
-    font-size: 16;
-    font-family: Arial, Verdana, sans-serif;
+    display: inline-block;
 }
 
-/* A CSS class */
-.example-class {
-    color: white;
-    background: black;
+.sidebar,
+main,
+.rightbar {
+    float: left;
 }
 
-/* A CSS ID */
-#example-id {
-    color: red;
-    background: yellow;
+.sidebar {
+    width: 20%;
+}
+
+main {
+    width: 50%;
+    height: 300px;
+    overflow: scroll;
+}
+
+.rightbar {
+    width: 30%;
+}
+
+footer {
+    clear: both;
 }
