@@ -148,8 +148,7 @@ Unordered list types: circle, disk, square
 
 =list-style-image= lets you use a custom image instead of a bullet point. Use the =url('path/to/picture.png')= to point to your picture (replacing =path/to/picture.png= with the path to your picture). You should also set a default (above uses =square= as default)
 
-** Selectors (advanced)
-
+** Advanced Selectors
 *** Descendant Selectors
 If you want to say something like "all of =some-tag= inside of =some-other-tag=". This allows for intermediate tags between the two.
 
@@ -225,7 +224,14 @@ nav > a.nav-link {
 }
 #+END_SRC
 
-
 ** Browser Capabilities
-** Images and Opacity
+Different browsers have different behavior, and not all browsers support all the different HTML and CSS features. We won't talk about these too much, but you may see Browser Prefixes in CSS that you find in the wild. These are used to ensure that individual browsers do what the designer intends. Here are the prefixes that can be used:
 
+| prefix     | browser                      |
+|------------+------------------------------|
+| =-webkit-= | Android, Chrome, iOS, Safari |
+| =-moz-=    | Firefox                      |
+| =-ms-=     | Internet Explorer, Edge      |
+| =-o-=      | Opera                        | 
+
+The site http://caniuse.com will tell you when you do and do not need to use browser prefixes.
