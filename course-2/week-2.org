@@ -1,0 +1,108 @@
+* CSS - Week 2
+
+Remember: https://developer.mozilla.org/en-US/docs/Web/CSS is a source of documentation of everything we'll talk about.
+
+** Box Model
+How to think about your elements, and how they are placed.
+
+*** Height and Width
+=display: inline= elements: use as little height and width as possible. These are sized to their content.
+
+=display: block= and =display: inline-block= can be sized using the =height= and =width= properties.
+
+#+BEGIN_SRC css
+div {
+    height: 100%;
+    width: 100%;
+}
+#+END_SRC
+
+*** Border
+These are great for giving yourself a visual about how much space an element is using. Even if you don't plan on having borders in your final site, they can help you wireframe and develop your site.
+
+Required: style. Not required: size (default 1px), color (default =#000000=)
+
+#+BEGIN_SRC css
+div {
+    border: solid 2px #DDAABB;
+}
+#+END_SRC
+
+And the equivalent, explicit version
+
+#+BEGIN_SRC css
+div {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #DDAABB;
+}
+#+END_SRC
+
+styles: none, dotted, dashed, solid, double, groove, ridge, inset, outset, hidden. protip: stick to solid
+
+color: same colors we talked about in week 1.
+
+*** Margin and Padding
+Margin is the space *outside* the border (between element border and neighbor elements). Padding is the space *inside* the border (between element border and content of element). Changing these will change how much space your element uses, and can be confusing (especially when used with floats, as your whole page might rearrange itself).
+
+Positive margin moves element rightward and downward. Negative margin moves element leftward and upward.
+
+Positive padding moves the content away from the border (makes the element bigger). Negative padding moves the content closer to the border,
+
+Margin and Padding is added to the height and width of your element. They will change the size of your elements.
+
+#+BEGIN_SRC css
+div {
+    margin: 5px; /* all sides*/
+
+    margin: 5px 5px 5px 5px; /* top, right, bottom, left*/
+
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+#+END_SRC
+
+#+BEGIN_SRC css
+div {
+    padding: 5px; /* all sides*/
+
+    padding: 5px 5px 5px 5px; /* top, right, bottom, left*/
+
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+#+END_SRC
+
+*** Centering an element (horizontally
+#+BEGIN_SRC css
+div {
+    margin: 0 auto;
+}
+#+END_SRC
+
+But this requires:
+
+- element must be =display: block=
+- element must not be =float=
+- element must not be =position: fixed= (we haven't covered this yet)
+- element must not be =position: absolute= (we haven't covered this yet)
+- element width must not be =auto=
+
+Centering is unreasonably difficult to do, and is widely considered one of CSS's biggest flaws.
+
+*** Sizing and measurements
+common size units:
+
+- =px= - pixels
+- =%= - percent of screen height or width
+
+There are loads of sizings and units of measurements. We aren't going to worry about most of them, but they are all in the documentation (link at the top).
+** Links and Lists
+** Selectors (advanced)
+** Browser Capabilities
+** Images and Opacity
+
