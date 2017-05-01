@@ -156,4 +156,57 @@ If you do not have this background, then =transform: matrix()= is not worth usin
 It is recommended that you not use this is real websites.
 
 ** Positioning
+We put elements at specific places using the =position= property. The four values are very different form each other. These can be further modified by top, bottom, left, and right.
 
+#+BEGIN_SRC css
+div {
+    position: static;
+    position: relative;
+    position: absolute;
+    position: fixed;
+    top: 0px;    /* offsets */
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#+END_SRC
+
+=static=
+
+- default value
+- uses next available space on the page
+- ignores top, bottom, left, right
+
+=relative=
+
+- Position an element relative to where it would be, if it was using static.
+- Lets you use the offsets (top, etc.) to move one way or another
+- does not affect any other element
+- usually, relative elements are containers (blocks) for other elements.
+
+=absolute=
+
+- ignores document flow, and positions relative to its parent element
+- Other elements position themselves as if the =absolute= element does not exist
+
+=fixed=
+
+- position is relative to the window. This how those annoying popups stay in the middle of your screen.
+- position will not change
+- Rather than popups, smart devs use this for navbars at the top.
+
+*** Positioning Tips
+- Figure out what kind of layout you want before you start coding. Take a moment to draw your layout on a piece of paper, and jot down what sort of content should appear in which area of the page. This will save you a lot of stress, as it gives you a tangible example of what your site should look like.
+
+- Positioning is going to be key to your layout. Again: know where you want your elements to be, relative to each other, before you start coding.
+
+- Browsers have default margins (and sometimes padding). You may need to manually set the =margin= to =0px= in order to get the look you expect.
+
+#+BEGIN_SRC css
+body {
+    margin: 0px;
+    padding: 0px;
+}
+#+END_SRC
+
+- When using =absolute=, your elements may stack on top of each other. If you don't like the way they are stacked, you can the =z-index= to determine the order in which they are stacked.
