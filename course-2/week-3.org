@@ -100,5 +100,60 @@ If we do not have a transition, that switch between default and hovered would be
 ** Transforms
 codepen example: https://codepen.io/ColleenEMc/pen/YyEYem
 
+MDN examples: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+Similar to transitions, transforms let you change the appearance of elements. We'll be talking about five different kinds of transforms:
+
+- translate (move)
+- rotate
+- scale (change size)
+- skew (slant)
+- matrix
+
+Translate takes 2 values - an X value and a Y value. These values determine how you want your element to reposition.
+
+- (+x, +y) - move to the upper right
+- (-x, +y) - move to the upper left
+- (+x, -y) - move to the lower right
+- (-x, -y) - move to the lower left
+
+#+BEGIN_SRC css
+.animate:hover {
+    transform: translate(50, -100);
+}
+#+END_SRC
+
+Rotate will rotate your element by some number of degrees. When you specify how many degrees, it is important that you use the =deg= (degree) unit. That is, write something like =180deg=
+
+#+BEGIN_SRC css
+.animate:hover {
+    transform: rotate(180deg);
+}
+#+END_SRC
+
+Scale will change the size of your element. It takes 2 values: an X factor and a Y factor. The X factor will be multiplied by the element's width (in pixels) to determine the new width. The Y factor will be multiplied by the element's height to determine the new height.
+
+#+BEGIN_SRC css
+.animate:hover {
+    transform: scale(2, 1.5);
+}
+#+END_SRC
+
+Skew will slant your element. It is very weird to use, and will require that you play around with it. Essentially, HTML elements are 2-dimensional. If we pretend that they are 3-dimensional, then we can reorient them. This reorientation will make them looked angled, or skewed. In CSS, we define an x-angle and a y-angle that will reorient the element.
+
+#+BEGIN_SRC css
+.animate:hover {
+    transform: skew(30deg, 15deg);
+}
+#+END_SRC
+
+Matrix will let you perform all of the above transforms at the same time. However, it is very confusing to learn unless you have a good background in Linear Algebra.
+
+If you do have this background, then you will have worked (by hand) with things like rotations matrices and skew matrices, and will know that you can multiply them together in order to make a single matrix that will perform both rotation and skew.
+
+If you do not have this background, then =transform: matrix()= is not worth using. Even if you have the background, most people do not, and so most people will not be able to read your CSS code.
+
+It is recommended that you not use this is real websites.
 
 ** Positioning
+
