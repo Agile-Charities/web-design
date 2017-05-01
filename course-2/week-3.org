@@ -1,0 +1,104 @@
+* CSS Week 3
+** Pseudo Classes and Pseudo Elements
+Elements that are dynamic or dependent on the DOM structure. For example, we saw that links had different states, like =hover=
+
+#+BEGIN_SRC css
+a:hover {}
+#+END_SRC
+
+Here are the types of Pseudo Classes:
+
+| Link       | User Action | Forms       |
+|------------+-------------+-------------|
+| =:link=    | =:hover=    | =:enabled=  |
+| =:visited= | =:active=   | =:checked=  |
+|            | =:focus=    | =:disabled= |
+
+There are also structural and positional pseudo classes:
+
+- =:first-child=
+- =:last-child=
+- =:nth-child(x)= (where =x= is an integer)
+- =:only-child=
+- =:first-of-type=
+- =:last-of-type=
+- =:only-of-type=
+- and many more
+
+Example:
+
+#+BEGIN_SRC css
+/* Last paragraph on page is small-caps and monospace */
+p:last-of-type {
+    font-variant: small-caps;
+    font-family: monospace;
+}
+#+END_SRC
+
+Pseudo Elements are similar, in that they are used to style specific parts of the page.
+
+| Textual         | Positional | Fragments     |
+|-----------------+------------+---------------|
+| =:first-letter= | =:before=  | =::selection= |
+| =:last-letter=  | =:after=   |               |
+
+#+BEGIN_SRC css
+/* Start each paragraph with a large capital letter */
+p:first-letter {
+    font-size: 125%;
+    font-variant: small-caps;
+}
+#+END_SRC
+
+These are just some examples. There are tons of things you can do with these, but explaining them all would be a 15 hours lecture. As always, you can find tons of information about these (and examples of using them) over at the [[https://developer.mozilla.org][Mozilla Developer Network]].
+
+** Transitions
+codepen example: https://codepen.io/ColleenEMc/pen/zvPpRL
+
+A CSS Transition is a way to animate an element's change in state. An element's state is usually either =:default=, =:focus=, or =:active= , and hovering/clicking on an element will change the state.
+
+- =transition-property= - what are you changing? (size color, position, etc.)
+- =transition-duration= - how long should the transition last? (short!)
+- =transition-timing-function= - smooth or acceleration? will show examples
+- =transition-delay= - when should the transition start?
+
+Steps to using transitions:
+
+1. define your elements (HTML)
+2. Pick which elements will transition
+3. Using pseudo classes, define the transitions
+
+#+BEGIN_SRC html
+<p>Let's play with this paragraph.</p>
+#+END_SRC
+
+#+BEGIN_SRC css
+p {
+    font-size: 16px;
+    background: #FF0000; /* red */
+
+    /* Specify what will transition */
+    transition-property: background, font-size;
+    /* specify duration of transition (in seconds) */
+    transition-duration: .5s;
+    /* smooth transition */
+    transition-timing-function: linear;
+    /* Any delay? */
+    transition-delay: 0s;
+}
+
+p:hover {
+    font-size: 24px;
+    background: #0000FF; /* blue */
+}
+#+END_SRC
+
+You can see that we define =p= and =p:hover= with normal css, making sure to include the four =transition-= properties in the =p= style. Once we load this up, hovering over an =p= element will start our transition.
+
+If we do not have a transition, that switch between default and hovered would be instantaneous.
+
+** Transforms
+codepen example: https://codepen.io/ColleenEMc/pen/YyEYem
+
+
+** Positioning
