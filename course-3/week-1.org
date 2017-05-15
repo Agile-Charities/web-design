@@ -1,7 +1,6 @@
 * Javascript, Week 1
 Week 1 video lecture source code here: https://codepen.io/collection/nLPkgP/
 
-
 ** DOM review, and Object Oriented Programming
 
 Recall:
@@ -26,9 +25,48 @@ Some important basics to know when using JS to interact with the DOM:
   - =document.getElementByTagName('p')=
 - We can modify the HTML attributes of all of our elements.
 
+Some of the techniques we'll be using include:
+
+- =document.getElementByID(element_id)=
+- =document.getElementsByClass(element)=
+- =element.innerHTML= - content
+- =element.style= - visuals
+- =element.setAttribute(attribute, value)=
+- =element.removeAttribute(attribute)=
+
+All of this stuff probably doesn't make sense now, but at the end of the course you should have the knowledge to understand what these are and when to use them.
+
+** Output
+Unlike most programming languages, JS doesn't have a =print()= equivalent. There are several ways to display output, and we'll be using most of them as we learn the language:
+
+- =window.alert()= - show a popup
+- =window.prompt()= - show a pormpt
+- =document.write()= - directly add to the end of the HTML document
+- =innerHTML()= - change the contents of an HTML element
+- =console.log()= - print to the dev tools console
+
+#+BEGIN_SRC javascript
+alert("Hello, world!");
+
+prompt("Please enter your name: ");
+
+document.write("This should be at the bottom of the page...");
+document.write("...until more stuff gets added to it");
+
+console.log("The normal user will never see this...");
+
+element.innerHTML = "This will overwrite the previous contents of 'element'.";
+#+END_SRC
+
+JS can be written inline using =<script>=, but mostly we'll be using external =.js= files (which work like =.css= files, which we've been using).
+
+You should definitely looks over and play around with the liked Codepen examples. Also, be sure to play around with your browser's JS console.
+
 ** Variables
 
+
 ** Data and Types
+
 
 ** Operators and Expressions
 
