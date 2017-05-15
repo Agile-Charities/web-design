@@ -1,0 +1,36 @@
+* Javascript, Week 1
+Week 1 video lecture source code here: https://codepen.io/collection/nLPkgP/
+
+
+** DOM review, and Object Oriented Programming
+
+Recall:
+
+- The DOM is the structure of our HTML code
+- Each element has exactly 1 parent element, and possibly many children elements
+- Each element has different properties and attributes, and do different things
+- The DOM is a "tree" structure
+
+The reason this is important is that we can use Javascript, a programming language, to "walk" the different paths of this tree and modify it. We start from the top (=document=), and by choosing which path to follow, we can get to any element we want. This may seem weird, but it allows us to modify our page while the user is interacting with it.
+
+Example: If you go on Amazon and add something to your cart, the contents of the page will change to show you how many things are in your cart (that icon in the top right portion of the screen) and what things you've added to your cart (the column on the right). This is all done through Javascript.
+
+Some important basics to know when using JS to interact with the DOM:
+
+- =document= is the root of your page. All page content lives in here. It is the parent element of your page's DOM. In the console (browser web tools) try typing the following things
+  - =document.URI=
+  - =document.height=
+  - =document.links=
+- elements - these are nodes in your tree. That is, they are the HTML elements that you put content in, like =<p>text</p>= . JS has a few different ways to find elements, we'll cover them in a future week.
+- =nodeList= - this is a Javascript array of many elements. Typing the following would allow you to look at, and modify, all of the =<p>= tags on your page:
+  - =document.getElementByTagName('p')=
+- We can modify the HTML attributes of all of our elements.
+
+** Variables
+
+** Data and Types
+
+** Operators and Expressions
+
+
+
