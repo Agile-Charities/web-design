@@ -1,6 +1,8 @@
 * Javascript, Week 1
 Week 1 video lecture source code here: https://codepen.io/collection/nLPkgP/
 
+Javascript doesn't always behave as you might expect. It has some well known quirks that you will almost certainly run into. Check out this famous video to see Javascript get called out on the weirdness of the language: https://www.destroyallsoftware.com/talks/wat. It starts by talking about Ruby, a different language, but just go with it. It'll move onto Javascript very quickly.
+
 ** DOM review, and Object Oriented Programming
 
 Recall:
@@ -60,13 +62,110 @@ element.innerHTML = "This will overwrite the previous contents of 'element'.";
 
 JS can be written inline using =<script>=, but mostly we'll be using external =.js= files (which work like =.css= files, which we've been using).
 
-You should definitely looks over and play around with the liked Codepen examples. Also, be sure to play around with your browser's JS console.
+You should definitely look over and play around with the liked Codepen examples. Also, be sure to play around with your browser's JS console.
 
 ** Variables
+Variables are what we use to store values and data. In order to use a variable, we need to do two things: declare it, and bind a value to it.
 
+#+BEGIN_SRC javascript
+// declare a variable
+var age;
+
+// bind a value to the variable
+age = 25;
+
+// declare and bind in a single step
+var age = 25;
+#+END_SRC
+
+Assigning (binding) a value to a variable is done with a single equals sign.
+
+Variable names can be composed of letter, numbers, underscores, and dollar signs. Generally, most variables are only letters and underscores. However, they cannot start with a number. Furthermore, variables are case sensitive. The following variables are not the same:
+
+#+BEGIN_SRC javascript
+// different variables
+var name1 = "Alice";
+var Name1 = "Bob";
+#+END_SRC
+
+When naming variables, try to give them a name that corresponds with what you are using them for. For example, if you are storing a person's age, you should not name your variable =weight=, because it implies a use that is not what you are using the variable for.
+
+Sometimes, you will see people referring to the LHS (left hand side) or RHS (right hand side) of an assignment. LHS just means the =var variable_name= part, and RHS is the value being bound. This is oftentimes an expression that results in a value.
+
+Her is a little bit of example code, demonstrating how we can use variables and output to provide an interactive web page.
+
+#+BEGIN_SRC javascript
+var name = prompt("What is you name? ");
+document.write("Hello, " + name);
+
+var date = Date();
+document.write("Today is " + data);
+#+END_SRC
+
+Note that JS will execute in order of top to bottom. That is, in the above example, it will always prompt for your name before writing the data. It will execute one line at a time, starting from the top.
+
+Something interesting that I've done is I've added values together. This can be very useful, as we can use value to add new elements to our page. The following will ask for the user's name and produce and =h1= tag using that value.
+
+#+BEGIN_SRC javascript
+var name = prompt("name please: ");
+document.write("<h1>" + name + "</h1>");
+#+END_SRC
 
 ** Data and Types
+Different data has different "types". Variables can hold values of all types, and if you reassign a variable, the value it holds can change from one type to another.
 
+Types are things like number, string, function, date, etc. They are a way to make clear that some values can do some things, but not other things. You can subtract a number from a number, for example, but you cannot subtract a date from a number. By being aware of types, we can understand what should and should not happen when we start combining values to create new values.
+
+(If you haven't seen it, check out the "Wat" video linked at the top. Javascript doesn't always make sense, and most of the weirdness comes from some absurd type stuff)
+
+We can check what type a value is by using the =typeof()= function. For example, type the following lines into your browser's JS console:
+
+#+BEGIN_SRC javascript
+typeof(Infinity);
+typeof(-3.5);
+typeof(NaN); // NaN means "Not a Number"
+typeof(window.innerWidth);
+#+END_SRC
+
+These are all numbers, but that might not be obvious at first glance. Try adding and subtracting various numbers to and from these in order to get a feel for how numbers work is JS.
+
+*** Numbers
+Numbers are, well, numbers. We've just seen some unusual kinds (infinity, NaN, etc.) but on the whole, numbers are exactly what you expect. You can add and subtract and multiply and divide and do all sort of math with them.
+
+*** Strings
+Strings are text, I've been using them in all the example code. Recall our prompt example:
+
+#+BEGIN_SRC javascript
+var name = prompt("name please: ");
+document.write("<h1>" + name + "</h1>");
+#+END_SRC
+
+The things in quotes are strings. Every time you write a string, you need to put it in quotes. However, once that string is bound to a variable, you don't need to worry about the quotes anymore. Javascript will take care of those for you.
+
+Lots of values are strings. Sometimes complicated data is encoded to strings (search wikipedia for "base 64 encoding" and scroll down to the "Examples" section. Also, note how I've used quotes to denote the text with value? Those are strings)
+
+Beware of copy and pasting strings from the internet. There are many different kinds of quote character, and it is important that you use the double quote that you get from pressing Shift and apostrophe. If you copy strings from, say, a Word document, you will almost always have errors.
+
+*** Booleans
+There are exactly 2 boolean values: =true= and =false=. These areused all the time in conditionals: if some condition is true, do some action. Otherwise, do a different action. We'll talk more about conditionals next week.
+
+*** Array
+An array is a collection of values. You can think of it like a list of values, all stored in a single variable. We'll be seeing these a lot, but don't worry about them too much for now.
+
+One of the cool things about arrays is that they assign an "index" to each value they hold, so you can pull out individual values as you need them.
+
+*** Object
+Objects are a way to use complicated data. An HTML element, for example, is an object containing some content, some attribute/value pairs, and possible interactivity. We've used HTML elements before, so those are somewhat familiar, but there are loads of ways you can make objects. We'll be looking at these in depth later, so don't worry too much right now.
+
+Here's an example where we get multiple objects and store them, in an arrya, in a variable:
+
+#+BEGIN_SRC javascript
+var all_paragraphs = document.getElementsByTagName("p");
+#+END_SRC
+
+This gets as many =p= tags as are on the page, then puts them into an array, and then stores that array in the =all_paragraphs= variable.
+
+Using arrays and objects, we can do amazing things. But they can be complicated, so we'll build up to them slowly.
 
 ** Operators and Expressions
 
