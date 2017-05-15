@@ -168,6 +168,67 @@ This gets as many =p= tags as are on the page, then puts them into an array, and
 Using arrays and objects, we can do amazing things. But they can be complicated, so we'll build up to them slowly.
 
 ** Operators and Expressions
+JS works through things called statements and expressions. Every line that ends with a semicolon can be considered a statement, and the different parts of that line are expressions. There are many expressions that will be familiar to you right now, and most of the rest will become familiar as we go through the course.
 
+The following is a list of the basic operators we'll be using. There's a lot here, so feel free to refer back to this, or google search if you don't understand any.
 
+#+BEGIN_SRC javascript
+/*****
+Mathematics
+*****/
+x = 5 + 3;
+x = 6 - 2;
+x = 3 * 4;  // multiplication
+x = 12 / 3; // division
+x = 5 % 2;  // modulus operator (integer division)
 
+// Increment
+x++;
+
+// Decrement
+x--;
+
+// Plus-Equals, Minus-Equals
+x += 4;
+// x = x + 4;
+x -= 2;
+// x = x - 2;
+
+/*****
+String Operators
+*****/
+// combine strings (concatenate)
+s = "Hello " + "World"; // === "Hello World"
+s = "Hello " + 5;       // === "Hello5"
+s =+ "You";             // === "Hello5You"
+
+/*****
+Boolean Operators
+*****/
+// let's have 3 equal 3. then we can ask (==) if it's equal to something
+x = 3;
+x == 3; // === true (equality check)
+x == 5; // === false (equality check)
+x != 5; // === true (inequality check)
+
+// equality with type
+x == 3;    // true
+x == "3";  // also true
+x === "3"; // false
+x !== "3"; // true
+x !== 3;   // false
+
+/*****
+Logical Operators
+*****/
+true && false; // false
+true && true; // true
+false && false; // false
+
+true || false;  // true
+true || true;   // true
+false || false; // false
+
+!true;  // false
+!false; // true
+#+END_SRC
