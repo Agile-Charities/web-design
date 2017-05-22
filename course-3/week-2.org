@@ -94,7 +94,7 @@ The =example.html= file, and the =example.js= file, show how this can be used to
 
 =onclick= and =onload= are probably the most common events that we bind to.
 
-You will note that I use double quotes ("") to enclose my function. You are technically able to use single quotes as well, but this is strongly discouraged. Single quotes are great for function parameters. In the following example, note how I use double quotes on the outside, and single quotes for function parameters.
+You will note that I use double quotes to enclose my function. You are technically able to use single quotes as well, but this is strongly discouraged. Single quotes are great for function parameters. In the following example, note how I use double quotes on the outside, and single quotes for function parameters.
 
 #+BEGIN_SRC html
 <div onclick="say_hi_to('Bob', 'Tyler')"></div>
@@ -110,5 +110,26 @@ some of the different types of events include:
 - Mozilla Developer Network has a comprehensive list
 
 ** 'this'
+=this= is a confusing concept in the best of times. If you read the MDN documentation for =this=, you'll find that there are all kinds of special cases for its behavior. In order to keep things simple and understandable, we are going to focus on only one use case of =this=.
 
+Specifically, we are going to talk about what =this= is when a DOM element handles an event. We just talked about events: they are HTML attributes that call a JavaScript function. We have =this= so that our function can refer to the element calling it. That is to say, if an element calls a function for some event, the function that gets called is able to interact with that calling element using =this=.
 
+If you don't get a full grasp of =this=, don't be discouraged. It is an unusual concept with tons of corner cases. Even the very best programmers in the world can get stumped by =this= and the weird behavior it can have.
+
+#+BEGIN_SRC html
+<p id="elem" onclick="getID(this)"></p>
+#+END_SRC
+
+#+BEGIN_SRC javascript
+var getID = function(elem){
+    element_id = elem.id;
+    elem.innerHTML = element_id;
+}
+#+END_SRC
+
+In this snippet, we can see two things.
+
+1. An HTML =p= element, with attributes =id= and =onclick=. In the =onclick=, we pass in =this= as a parameter.
+2. A JS function, that attempts to get the =id= from =elem=. as we passed in =this= when we called it, =elem= will refer to the element that is calling the function.
+
+We'll go over a bunch of examples in class. Colleen's example can be found here: https://codepen.io/collection/Adbwgo/

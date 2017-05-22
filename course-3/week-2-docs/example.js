@@ -45,3 +45,14 @@ var update_bio = function() {
     /* write the bio_string into an HTML element that has the ID "bio" */
     document.getElementById("bio").innerHTML = bio_string;
 }
+
+/***************
+`this`
+***************/
+
+// get the `id` of the calling DOM element
+// and replace the innerHTML with its `id`
+var getID = function(elem){
+    element_id = elem.id;
+    elem.innerHTML = element_id;
+}
