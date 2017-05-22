@@ -1,0 +1,71 @@
+* Javascript, Week 2
+
+** Functions
+Functions are pieces of code (functionality) that you can reuse. Some functions are built into the language - they are always there. Some functions are defined by other people, and we can include and use them in our code. Other functions are defined by us.
+
+The important term here is defined: wen we define a function, we are describing several things:
+
+- what inputs does this code require
+- what does this code do with those inputs
+- what value get produced by this code
+
+In JS, defining functions uses the following syntax:
+
+#+BEGIN_SRC javascript
+function add_two_nums(num1, num2) {
+    /* this part is the function's "body" */
+    output = num1 + num2;
+    return output;
+}
+#+END_SRC
+
+The above example uses the =function= keyword to define a function named =add_two_nums=, and this function takes 2 inputs, =num1= and =num2=. In the "body" of the function, we can see that it adds the two inputs together and uses the =return= keyword to give back a the value of =output= to whatever piece of code will call this function.
+
+Function names can only use letters, digits, and underscores. You should try to only use letters and underscores.
+
+Inputs have the same naming rules as variables.
+
+The function body is a piece of code that will run every time the function is called. Our example is pretty basic, but functions can be used to simplify incredibly complicated problems.
+
+The following example has no inputs, and displays an alert to the user:
+
+#+BEGIN_SRC javascript
+function hello() {
+    alert("Welcome to JavaScript!");
+}
+#+END_SRC
+
+Every time we run this function, it will display this alert. Calling a function is pretty simple, and we've actually just done so. =alert= is a function, and we can see that we use parenthesis to tell alert what its inputs are.
+
+I've defined several functions over in [[./week-2-docs/example.js][this js file]]. We'll go over these example, and probably do several more, in class.
+
+Generally, if a built-in function does what you want, use it. If another programmer has developed a library that does what you want to do, use that library. Once you've done it a few times, using other people's code is easy and natural, and will save you the work of needing to write everything yourself.
+
+** Code Organization and Folder Structure
+Up to now, we've been writing JS in the console, and haven't been using it from within our web pages. This is useful for learning, but it won't make our pages cool.
+
+When we include JS code in our webpages, there are two main ways to do it:
+
+- inside the HTML file, by using a =script= tag
+- in a =.js= file, and link it with a =script= tag
+
+Both of these utilize a =script= tag, and they both *must* bu used in the =head= section. This is the same place where we put our CSS, so it should be familiar. See [[./week-2-docs/organization.html][organization.html]] for an example.
+
+In this class, all of my JS will be in =.js= files. This is industry standard, and it's generally the best way to do it. The JS examples on CodePen that we've looked at a couple times do not use Js files, which is unfortunate.
+
+At this point, we've talked about HTML files, CSS files, and JS files. We've also mentioned image files, and a few other kinds of files. Once we start using all of them at the same time, our project folder can become very messy. Web Developers have settled on the following folder structure as a good way to keep things organized:
+
+- Project Folder
+  Contains your HTML files
+  - =js=
+    Contains your Javascript files
+  - =css=
+    Contains you CSS files
+  - =img=
+    Contains your image files
+  - =lib=
+    Contains javascript libraries that other people wrote
+
+This folder structure keeps all of you files grouped into specific folders. This means that you'll know where everything is without having to guess.
+** Events
+** 'this'
