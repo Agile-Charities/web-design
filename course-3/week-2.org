@@ -66,8 +66,15 @@ At this point, we've talked about HTML files, CSS files, and JS files. We've als
   - =lib= - 
     Contains JavaScript libraries that other people wrote
 
-This folder structure keeps all of you files grouped into specific folders. This means that you'll know where everything is without having to guess.
+This folder structure keeps all of your files grouped into specific folders. This means that you'll know where everything is without having to guess.
 
+This structure is not mandatory - we've gotten along just fine with having all of our files next to each other. But once your start working on sites that have dozens of HTML files, dozens of CSS files, several JS files, and hundreds or thousands of images, keeping track of everything will be difficult without a similar setup to what is described above.
+
+When linking to your CSS and JS files form within you HTMl file, you simply put =js/= or =css/= in front of your JS and CSS filename. Look at [[./week-2-docs/organization.html][organization.html]] for an example of what this looks like. Note that it links to empty CSS and Js files - it is only there for an example.
+
+Note that the file and folder names are case sensitive. Almost everyone uses lowercase only in order to make this easy. Once you start adding upper case letter to your files and folders, you'll start running into a lot of needless typos.
 
 ** Events
+
+
 ** 'this'
