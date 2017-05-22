@@ -55,17 +55,19 @@ In this class, all of my JS will be in =.js= files. This is industry standard, a
 
 At this point, we've talked about HTML files, CSS files, and JS files. We've also mentioned image files, and a few other kinds of files. Once we start using all of them at the same time, our project folder can become very messy. Web Developers have settled on the following folder structure as a good way to keep things organized:
 
-- Project Folder
-  Contains your HTML files
-  - =js=
-    Contains your Javascript files
-  - =css=
+- =project_name= - 
+  This is the top level folder that contains your HTML files, and the following folders
+  - =js= - 
+    Contains your JavaScript files
+  - =css= - 
     Contains you CSS files
-  - =img=
+  - =img= - 
     Contains your image files
-  - =lib=
-    Contains javascript libraries that other people wrote
+  - =lib= - 
+    Contains JavaScript libraries that other people wrote
 
 This folder structure keeps all of you files grouped into specific folders. This means that you'll know where everything is without having to guess.
+
+
 ** Events
 ** 'this'
