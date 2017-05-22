@@ -75,6 +75,40 @@ When linking to your CSS and JS files form within you HTMl file, you simply put 
 Note that the file and folder names are case sensitive. Almost everyone uses lowercase only in order to make this easy. Once you start adding upper case letter to your files and folders, you'll start running into a lot of needless typos.
 
 ** Events
+We've now gotten to grips with the basics of JS, how to write functions, and how to make sure our HTML files can include JS functionality. Now we're going to talk about Events - the things that let our page use JS to provide interactivity.
 
+We'll be using the following events to decide when our javascript runs. These are not all of the events, but they are the most common ones.
+
+- =onclick= - User clicks, your javascript function runs
+- =onload= - Page load causes your javascript to run
+- =onmouseover= - Javascript runs when user mouses over an element
+- =onresize= - Run javascript when the browser window changes size
+
+These events are used in the same way that an HTML attribute is used. Example:
+
+#+BEGIN_SRC html
+<div onclick="some_function()"></div>
+#+END_SRC
+
+The =example.html= file, and the =example.js= file, show how this can be used to modify a page based on a user's input.
+
+=onclick= and =onload= are probably the most common events that we bind to.
+
+You will note that I use double quotes ("") to enclose my function. You are technically able to use single quotes as well, but this is strongly discouraged. Single quotes are great for function parameters. In the following example, note how I use double quotes on the outside, and single quotes for function parameters.
+
+#+BEGIN_SRC html
+<div onclick="say_hi_to('Bob', 'Tyler')"></div>
+#+END_SRC
+
+The function we are calling (in this example) takes two strings as input. In order to make sure HTML doesn't mess up what is and isn't an input, we pass the function and it's inputs as a string using double quotes. The inputs themselves are in single quotes. By using the two different types of quotes for different purposes, the browser will not screw up.
+
+some of the different types of events include:
+
+- Mouse Events (like onclick)
+- Keyboard Events (like onkeypress)
+- Frame Events (like onload, onresize)
+- Mozilla Developer Network has a comprehensive list
 
 ** 'this'
+
+
