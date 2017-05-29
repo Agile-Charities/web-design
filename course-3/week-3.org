@@ -136,5 +136,80 @@ console.log(total / nums.length);
 #+END_SRC
 
 ** Conditionals
+Conditionals are a way for programmers to make choices in programs. Sometimes, you want to do one thing, and at other times, you want to do something else. Let me illustrate with an example in JS.
 
+#+BEGIN_SRC javascript
+age = 20;
+
+if (age >= 21) {
+    console.log("This person can buy alcohol.");
+}
+else {
+    console.log("This person is too young for alcohol.");
+}
+#+END_SRC
+
+Let me write the general form of this, and discuss what's going on.
+
+#+BEGIN_SRC javascript
+if (condition) {
+    // do this block if condition is true
+}
+else {
+    // do this block if condition is false
+}
+#+END_SRC
+
+=condition= is some expression that evaluates to a Boolean value (=true= or =false=). Essentially, you can consider these as questions that results in yes or no.
+
+The syntax is pretty straightforward, and looks a bit like the =for= loop syntax. As with loops, the ={}= denote the block associated with the conditional.
+
+Here's an example of how we can use conditionals to interact with users:
+
+#+BEGIN_SRC javascript
+/* say hello, but only if user enters their name */
+var name = prompt("What is your name?");
+
+if (name.length != 0) {
+    document.write("Hello " + name);
+}
+else {
+    document.write("No name, no game...");
+}
+#+END_SRC
+
+Conditionals can get rather complicated. Sometimes, we need to check multiple conditions before taking action. Let me revisit the alcohol example: it's not enough to be of age, you also need your ID with you. Let's update the conditional to also include a (simplified) check for the ID.
+
+#+BEGIN_SRC javascritp
+age = 20;
+has_id = true;
+
+if (age >= 21) {
+    if (has_id == true) {
+        console.log("This person can buy alcohol.");
+    }
+    console.log("This person has no ID, so no alcohol.");
+}
+else {
+    console.log("This person is too young for alcohol.");
+}
+#+END_SRC
+
+What we are doing here is called nesting our conditionals. By placing conditionals inside of each other, we can further restrict when we do things.
+
+There is another style of conditional that involves combining conditions together. Let me make a toy example where any number between 20 and 30 is "great!" but any other number is "lame...".
+
+#+BEGIN_SRC javascript
+
+number = 25;
+
+if (number >= 20 && number <= 30) {
+    console.log("great!");
+}
+else {
+    console.log("lame!");
+}
+#+END_SRC
+
+By using the =AND= operator, =&&=, we can combine two conditions. There is also the =OR= operator =||= and the =NOT=, or =NEGATE=, operator =!=. We can do some examples in class, and these are also easy to google for.
 
