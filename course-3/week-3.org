@@ -68,7 +68,7 @@ var some_numbers = [1,2,3,4,5,6,7,8,9,10];
 
 for (j = 0; j < some_numbers.length; j++) {
     // this code will be applied to every element in our array
-    console.log(some_numbers[j];
+    console.log(some_numbers[j]);
 }
 #+END_SRC
 
@@ -86,9 +86,13 @@ There are a few things to mention here. Let me go over them one by one:
 
     We declare an *iteration variable* that will keep track of how far into the loop we are. When looping over an array, we usually use =j= (or =i=) to keep track of the index we are currently looking at.
 
+    This variable will only exist inside the loop. Once the loop ends, it's gone forever. You'll commonly see the same iteration variable in many loops within the same file, and it's usually a single letter variable.
+
   - =j < some_numbers.length;=
 
     This is a conditional (we are about to talk more about these). If this conditional ever evaluates to =false=, then the loop will stop running. That is to say, the loop will only run when this conditional is true.
+
+    In our example, we want =j= to be less than the length of the array, so that we don't try to access elements that don't exist (which causes errors).
 
   - =j++=
 
@@ -98,11 +102,38 @@ There are a few things to mention here. Let me go over them one by one:
 
 - ={ /* code */ }=
 
-  The code in between the curly braces is called the *loop body*, and it will run exactly one time for each iteration of the loop. In the example loop, we will look at each index one time, and run the code =console.log(some_numbers[j];= for each index.
+  The code in between the curly braces is called the *loop body*, and it will run exactly one time for each iteration of the loop. In the example loop, we will look at each index one time, and run the code =console.log(some_numbers[j]);= for each index.
 
   The kind of code that goes into the loop body is normal JS. Generally, it will use the index (=j=) to access one element of the array, and then do some work with the element.
 
+To summarize, this is how a =for= loop works:
 
+1. JavaScript sees that you have a =for () {}= loop
+2. It creates the iteration variable
+3. It runs the condition. If true, go to 4. If false, go to 6.
+4. Run the loop body
+5. Update the iteration variable, and go to 3.
+6. Once the condition is false, the iteration variable is forgotten, and the loop ends.
+
+Example: find the average of an array of numbers
+
+#+BEGIN_SRC javascript
+// average = sum / count
+
+// example array
+var nums = [1,2,3,4,5,6];
+
+// store some values outside of the loop (otherwise, they will get lost when the loop ends
+// this variable will hold the sum of the numbers
+total = 0;
+
+for (i = 0; i < nums.length; i++) {
+    // update our total with each number
+    total += nums[i];
+}
+
+console.log(total / nums.length);
+#+END_SRC
 
 ** Conditionals
 
