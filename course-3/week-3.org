@@ -1,0 +1,66 @@
+* Javascript, Week 3
+examples: http://codepen.io/collection/noEJaj
+
+cheatsheet: http://cheat-sheets.org/saved-copy/jsquick.pdf
+
+** Arrays
+Arrays are a type of data that can store many different values. They are "containers" or "elements". We say element, because it is a general term that can apply to any kind of data.
+
+#+BEGIN_SRC javascript
+// empty array - no values inside
+var empty = []
+
+// numeric grades
+var grades = [80, 93, 71, 97, 85, 62];
+
+// string foods
+var foods = ['apple', 'pizza', 'steak'];
+
+// HMTL elements that have the class 'imgs'
+var images = document.getElementsByClassName('imgs');
+
+// all list items on page
+var items = document.getElementsByTagName('li');
+#+END_SRC
+
+We can access any element using a thing called an index. An index is a number that lets us pick out a particular element. In JS, the indices start from 0. Basically, if we want the 7th element in an array, we would ask for the index =[6]=. The following example, using an array of letters, should hopefully demonstrate this idea.
+
+#+BEGIN_SRC javascript
+// an example array
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
+// access elements using their index
+alphabet[0] === 'a'; // first value in the array
+alphabet[1] === 'b'; // second value in the array
+// ...
+alphabet[6] === 'g'; // seventh value in the array
+#+END_SRC
+
+An interesting thing about arrays is that they can hold values of any type. This can get a little fancy, although it doesn't happen often in practice. The following example will make an array containing a string, a number, and an array (yes, that is an array (of HTML elements) inside of an array).
+
+#+BEGIN_SRC javascript
+// an array with multiple types inside it
+var my_array = ['hello', 15, document.getElementsByTagName('p')];
+#+END_SRC
+
+Arrays have some functions and methods that provide some built in functionality.
+
+#+BEGIN_SRC javascript
+// just an example array
+var arr = [];
+
+arr.length; // number of elements in this array
+
+arr.sort(); // sort the elements in the array. Can be confusing if there are multiple types
+
+arr.push(1); // add an element to the end of the array
+arr[arr.length] = 3; // add an element to the end of the array
+arr[1] = 2; // insert an element at an arbitrary index
+#+END_SRC
+
+** Loops and Iteration
+
+
+** Conditionals
+
+
