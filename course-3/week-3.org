@@ -180,7 +180,7 @@ else {
 
 Conditionals can get rather complicated. Sometimes, we need to check multiple conditions before taking action. Let me revisit the alcohol example: it's not enough to be of age, you also need your ID with you. Let's update the conditional to also include a (simplified) check for the ID.
 
-#+BEGIN_SRC javascritp
+#+BEGIN_SRC javascript
 age = 20;
 has_id = true;
 
