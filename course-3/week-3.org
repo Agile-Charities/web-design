@@ -59,6 +59,49 @@ arr[1] = 2; // insert an element at an arbitrary index
 #+END_SRC
 
 ** Loops and Iteration
+With arrays, we can store multiple values really easily. However, using index notation to get at every value is a major pain. To make things easier, we can use loops to go over an array one element at a time, avoiding the need to manually access elements.
+
+Below is a loop that logs each element to the console.
+
+#+BEGIN_SRC javascript
+var some_numbers = [1,2,3,4,5,6,7,8,9,10];
+
+for (j = 0; j < some_numbers.length; j++) {
+    // this code will be applied to every element in our array
+    console.log(some_numbers[j];
+}
+#+END_SRC
+
+There are a few things to mention here. Let me go over them one by one:
+
+- =for () {}=
+
+  This is the basic syntax of a =for= loop. We need to put stuff in the parenthesis, and we need to put stuff in the curly braces, but know that every time you see this sort of syntax, you are looking at a =for= loop.
+
+- =(j = 0; j < some_numbers.length; j++)=
+
+  This section defines the "bounds" of the loop. This section can be confusing until you get familiar with how it all works. Note that there are 3 parts, and they are separated by semicolons (=;=). Let's look at each part:
+
+  - =j = 0;=
+
+    We declare an *iteration variable* that will keep track of how far into the loop we are. When looping over an array, we usually use =j= (or =i=) to keep track of the index we are currently looking at.
+
+  - =j < some_numbers.length;=
+
+    This is a conditional (we are about to talk more about these). If this conditional ever evaluates to =false=, then the loop will stop running. That is to say, the loop will only run when this conditional is true.
+
+  - =j++=
+
+    The third part states how our loop state is going to change after each iteration. I said earlier that we would use =j= to keep track of which index we are looking at. This section of the loop details how we move from one index to the next. The =++= means that we will increase the value of =j= by 1, that is, we move to the next index.
+
+  On the whole, the loop conditions on this line are extremely common. It basically says that we are going to look at each index of the array exactly one time. You will almost always use this when looping over an array.
+
+- ={ /* code */ }=
+
+  The code in between the curly braces is called the *loop body*, and it will run exactly one time for each iteration of the loop. In the example loop, we will look at each index one time, and run the code =console.log(some_numbers[j];= for each index.
+
+  The kind of code that goes into the loop body is normal JS. Generally, it will use the index (=j=) to access one element of the array, and then do some work with the element.
+
 
 
 ** Conditionals
