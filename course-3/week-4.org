@@ -13,17 +13,18 @@ There are three primary tags when working with forms: =form=, =label=, and =inpu
 
 - =input= is for one single input. You'll commonly use several =input= tags in each =form= tag.
 
-Below is an example form with 3 different inputs, separated with =br= (line break) tags.
+Below is an example form with 3 different inputs, separated with =br= (line break) tags. Ending them is a submit button.
 
 #+BEGIN_SRC html
 <form>
     <label for="first-name"></label>
-    <input id="first-name" type="text">
+    <input id="first-name" type="text" name="first-name">
     <br />
-    <label>Email:<input type="email"></label>
+    <label>Email:<input type="email" name="email"></label>
     <br />
-    <label>Birthdate:<input type="date"></label>
+    <label>Birthdate:<input type="date" name="birthdate"></label>
     <br />
+    <input type="submit" value="Click to submit">
 </form>
 #+END_SRC
 
@@ -35,11 +36,73 @@ The second and third methods put the =input= inside the =label=, so the two are 
 
 One thing to note is the =type= attribute. Above, we use the =text=, =email=, and =date= values. These are all different kinds of input, and will each have their own experience.
 
-For the list of available input types, go to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+You may have noticed a =name= attribute. This is primarily used by a backend server that receives the contents of the form. We don't have a backend, so it won't make a difference to us. However, most commercial websites will have a backend, so you should get in the habit of using the =name= attribute.
 
+There is another attribute, =value=, that we do care about. When applied to a text-type =input=, =value= will let you put in "default" content. This is a value that can be changed by the user, but if the user doesn't change it, it will be submitted with the rest of the form.
 
+When =value= is used with a button style =input=, =value= will be where you decide the button text.
 
+=placeholder=, which we have not seen, allows you to put "shadow" content inside the inputs. This is very common with =email= inputs.
+
+Lastly, all forms should end with a way to submit the input. this will usually be an unlabeled =input= of =type= =submit=. This will make a button in the form where you can add an =onclick= event, allowing you to get the contents of the inputs once the user is ready to give them to you.
+
+For the list of available input types, go to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input. Each item in the list has its own page and an example, so go to the ones that interest you and see how they behave.
 
 ** Validation
-** Comparing Inputs
+Validation is the process of ensuring that input is correct or meets requirements. You know those password requirements like "must include a number and a symbol"? That sort of requirement is checked through validation.
+
+First step of validating input is figuring out what your input is, and what rules it needs to follow. Examples:
+
+- emails address must have an '@' sign, followed by a =domain.tld=.
+
+- Address forms must have at least a street address, zip code, county, and country.
+
+- A rating of 1 to 10 must be a number.
+
+- When confirming an email address, the two entered addresses should be exactly the same.
+
+Once you have your rules, you can proceed to actually validating. There are two primary options here:
+
+- HTML5 input types. The stuff we just talked about, using the =type= attribute, will restrict the sorts of things that users can enter. This is usually not enough on its own, but it does a majority of the work for you.
+
+  HTML5 also has attributes (like =min=, =max=, =required=) that allow you to further restrict inputs.
+
+  - =required= says that the input must be "populated" with something. During web site development, this is often paired with the =form= attribute =novalidate= to skip checking whether things are =required=.
+
+  - =pattern= forces the input to adhere to a "regular expression" aka a pattern. Regexps, as they are commonly abbreviated, are very tricky, and we won't be covering them in this class. They can be useful, but they are also easy to screw up. http://html5pattern.com can generate regexps for you.
+
+  - =min=, =max=, and =step= restrict numeric input. =min= and =max= are self explanatory, and =step= says that you can only enter multiples of a number. =range= is the same as =max= + =min=, just with a different look.
+
+- JavaScript. Input is data, and we can inspect and manipulate date with JavaScript. Therefore, we can use JS to make sure that the input meets our rules for that input.
+
+Colleen has a number of examples in the codepen collection, go over some in class.
+
+** Validating Inputs with JavaScript
+Once you know what kind of input you are looking for and what sort of rules that input has, you can start writing some JS that will ensure that those rules are kept. We'll begin by talking about this process by deciding when you should run your validation code.
+
+There are three events that concern us when using JS to validate:
+
+- =oninput= - This will run your validation code on every keystroke in the input field. This is usually not so good, but there are cases for it.
+
+- =onchange= - This will run the validation code when the user moves away from the input (tab, =ENTER=, click, tap, etc.). This is the most commonly used event for checking input, as it allows the user to type their input without being constantly hounded about how it isn't right. Of course it isn't, they aren't finished typing it.
+
+- =onclick= - Generally speaking, your "Submit" button should always have an =onclick= event that calls a function that validate the entire input form. This is to ensure that everything is good to go, before the button sends the data on its way.
+
+The next step is figuring out how to convert your input rules into JS code. This is the majority of the process, and it can be difficult. Even things that are easy to talk about can be surprisingly difficult to write in code.
+
+Don't get frustrated if you take a while to figure out how to get your rule checking correctly. Everyone has difficulties with validation, and the common wisdom is to do a search to see if anyone has tried to use the same rules before. Most rules have been done many times, so searching lets you reuse code that is known to work.
+
+The last part is making sure your user knows whether their input is good or bad. Most sites will use some combination of the following:
+
+- Disable the "Submit" button until all input validates successfully.
+- Mark valid input with green (check mark beside the input, for example).
+- Mark invalid input with red ('X' next to input, sometimes text as well).
+- Text near the "Submit" button detailing which parts don't validate.
+
+All of these things can be done with the JavaScript we already know. We know how to add text to an element (=element.innerHTML=), we know how to style elements, and disabling an element is ust changing the element's attributes.
+
+In the lecture videos (and examples we'll be going over in class) we'll be using an alert to inform the user. This is normally frowned upon, but it is fast and easy, so it's alright in a learning/teaching setting.
+
 ** Checkboxes, Radio Buttons
+
+
