@@ -1,0 +1,45 @@
+* Javascript, Week 4 - Input
+examples: http://codepen.io/collection/DYydJE
+** Forms
+Forms are the standard way to get user input. Every time you've typed in your email address or password or Facebook post, you've been interacting with forms.
+
+Most forms are hooked up to backend servers that do a lot of processing. We haven't been working with servers, so we'll be learning about forms that operate using Javascript.
+
+There are three primary tags when working with forms: =form=, =label=, and =input=. These tags all work together to let the browser understand what is and is not part of a form.
+
+- =form= tells that browser that there is an input section. A form can have many inputs.
+
+- =label= is for labelling individual inputs.
+
+- =input= is for one single input. You'll commonly use several =input= tags in each =form= tag.
+
+Below is an example form with 3 different inputs, separated with =br= (line break) tags.
+
+#+BEGIN_SRC html
+<form>
+    <label for="first-name"></label>
+    <input id="first-name" type="text">
+    <br />
+    <label>Email:<input type="email"></label>
+    <br />
+    <label>Birthdate:<input type="date"></label>
+    <br />
+</form>
+#+END_SRC
+
+The first method uses an HTML attribute that we haven't talked about yet:
+
+- =for= and =id= work together to associate a =label= with an =input=. This allows you to select the input by clicking either the label or the input.
+
+The second and third methods put the =input= inside the =label=, so the two are automatically linked. This is a bit harder to read, but it's also very easy to use.
+
+One thing to note is the =type= attribute. Above, we use the =text=, =email=, and =date= values. These are all different kinds of input, and will each have their own experience.
+
+For the list of available input types, go to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+
+
+
+** Validation
+** Comparing Inputs
+** Checkboxes, Radio Buttons
