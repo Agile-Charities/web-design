@@ -104,5 +104,12 @@ All of these things can be done with the JavaScript we already know. We know how
 In the lecture videos (and examples we'll be going over in class) we'll be using an alert to inform the user. This is normally frowned upon, but it is fast and easy, so it's alright in a learning/teaching setting.
 
 ** Checkboxes, Radio Buttons
+Checkboxes are a way to allow for multiple selection from multiple choices. They are typically squares.
 
+In your HTML code, options from a checkbox need to share the same =name= attribute. This allows for your JS and backend services to know that the options are linked together.
 
+Radio buttons are a way to have single selection from multiple choices. They are typically circles.
+
+We'll look at Colleen's example for a demonstration of the HTML.
+
+In JavaScript, we can check whether the user has selected an option using the =checked= attribute. [Checkbox Example] has a good example of using this attribute.
