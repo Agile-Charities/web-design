@@ -23,11 +23,11 @@ You'll want to test your site to make sure it works.
 
 Simplest:
 
-  Resize your window and refresh the page.
+    Resize your window and refresh the page.
 
 Automated:
 
-  These sites are designed to show you your site in multiple sizes. They don't work for every site (a lot of sites rely on JS frameworks for rendering) but they will work for the sort of site that we build in this class.
+    These sites are designed to show you your site in multiple sizes. They don't work for every site (a lot of sites rely on JS frameworks for rendering) but they will work for the sort of site that we build in this class.
 
 - http://ami.responsivedesign.is
 
@@ -37,7 +37,7 @@ Automated:
 
 Browser Tools:
 
-  Right click and =Inspect Element=. There should be an icon that looks like a phone or tablet in the top left or top right of the browser tools. This will let you view your page at different device resolutions.
+    Right click and =Inspect Element=. There should be an icon that looks like a phone or tablet in the top left or top right of the browser tools. This will let you view your page at different device resolutions.
 
 ** Benefits of Responsive Design
 When making a website for different devices, there are three main options:
