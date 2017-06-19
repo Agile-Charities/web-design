@@ -9,6 +9,13 @@ function add_two_nums(num1, num2) {
     return output;
 }
 
+/* Same as above, but industry style */
+var add_two_again = function(num1, num2) {
+    /* this part is the function's "body" */
+    output = num1 + num2;
+    return output;
+}
+
 /* Get the user's name, and welcome them - no return value */
 var welcome = function(){
     name = prompt("What is your name?");
@@ -46,6 +53,12 @@ var update_bio = function() {
     document.getElementById("bio").innerHTML = bio_string;
 }
 
+var favorite = function(){
+    thing = prompt("What is your favorite thing?");
+    alert("Your favorite thing is " + thing);
+    document.getElementById("favorite").innerHTML = "Your favorite thing is " + thing;
+}
+
 /***************
 `this`
 ***************/
@@ -55,4 +68,33 @@ var update_bio = function() {
 var getID = function(elem){
     element_id = elem.id;
     elem.innerHTML = element_id;
+}
+
+var some_numbers = [1,2,3,4,5,6,7,8,9,10];
+
+var loop = function() {
+    for (j = 0; j < some_numbers.length; j++) {
+        // this code will be applied to every element in our array
+        console.log(some_numbers[j]);
+    }
+}
+
+var loop2 = function(arr) {
+    for (i=0; i < arr.length; i++) {
+        arr[i].innerHTML = i;
+    }
+}
+
+var alcohol_age = function(age, has_id) {
+    if (age >= 21) {
+        if (has_id == true) {
+            console.log("This person can buy alcohol.");
+        }
+        else {
+            console.log("This person has no ID, so no alcohol.");
+        }
+    }
+    else {
+        console.log("This person is too young for alcohol.");
+    }
 }
