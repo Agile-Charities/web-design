@@ -23,11 +23,11 @@ You'll want to test your site to make sure it works.
 
 Simplest:
 
-    Resize your window and refresh the page.
+- Resize your window and refresh the page.
 
 Automated:
 
-    These sites are designed to show you your site in multiple sizes. They don't work for every site (a lot of sites rely on JS frameworks for rendering) but they will work for the sort of site that we build in this class.
+- These sites are designed to show you your site in multiple sizes. They don't work for every site (a lot of sites rely on JS frameworks for rendering) but they will work for the sort of site that we build in this class.
 
 - http://ami.responsivedesign.is
 
@@ -37,7 +37,7 @@ Automated:
 
 Browser Tools:
 
-    Right click and =Inspect Element=. There should be an icon that looks like a phone or tablet in the top left or top right of the browser tools. This will let you view your page at different device resolutions.
+- Right click and =Inspect Element=. There should be an icon that looks like a phone or tablet in the top left or top right of the browser tools. This will let you view your page at different device resolutions.
 
 ** Benefits of Responsive Design
 When making a website for different devices, there are three main options:
@@ -73,25 +73,15 @@ To refresh our memories, here is a list of Absolute Measurements, which are meas
 
 We want to use **Relative Measurements**, which are measurements that work with multiple resolutions.
 
-- =%=
+- =%= - Percent. These values are always relative to the parent elements.
 
-  Percent. These values are always relative to the parent elements.
+- =em= - The font size of an element.
 
-- =em=
+- =rem= - font size of the root element
 
-  The font size of an element.
+- =vw= - viewport width. The width of the window, screen, etc. =1vw= is =1%= of width.
 
-- =rem=
-
-  font size of the root element
-
-- =vw=
-
-  viewport width. The width of the window, screen, etc. =1vw= is =1%= of width.
-
-- =vh=
-
-  viewport height. the height of the window, screen, etc. =1vh= is =1%= of height.
+- =vh= - viewport height. the height of the window, screen, etc. =1vh= is =1%= of height.
 
 There will be times when you want to hardcode a size in pixels. However, layout should always be in relative units.
 
