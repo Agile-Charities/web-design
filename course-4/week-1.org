@@ -1,0 +1,40 @@
+* Responsive Design - Week 1
+** What is Responsive Design?
+Responsive Design is a way of constructing websites in such a way that they look good on a variety of screen sizes. Typically, this means desktop monitors, laptops, tablets, and phones.
+
+Some of the goals of Responsive Design can be summarized like this:
+
+- Full content for all devices (don't shortchange mobile users)
+- Assume the user needs all the functionality
+- The website should have a similar looks and feel across devices, but the layout should change to match the device and input methods.
+
+Here's a list of some of the things we'll be working with, in order t meet those design goals:
+
+- Media queries: detect viewport size
+- Flexible grid based layouts: allow for relative sizing without having to redo the entire site
+- Flexible images: You should be able to view any image of any size from any device
+
+The following website has a collection of sites that do a good job with responsive design: http://mediaqueri.es
+
+A bad example is the IRS: https://www.irs.gov
+
+** Testing your site
+You'll want to test your site to make sure it works.
+
+Simplest: resize your window and refresh the page.
+
+Automated:
+
+  These sites are designed to show you your site in multiple sizes. They don't work for every site (a lot of sites rely on JS frameworks for rendering) but they will work for the sort of site that we build in this class.
+
+- http://ami.responsivedesign.is
+
+- http://mattkersley.com/responsive
+
+- https://designmodo.com/responsive-test
+
+
+
+
+
+** Fluid Measurements
