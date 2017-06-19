@@ -21,7 +21,9 @@ A bad example is the IRS: https://www.irs.gov
 ** Testing your site
 You'll want to test your site to make sure it works.
 
-Simplest: resize your window and refresh the page.
+Simplest:
+
+  Resize your window and refresh the page.
 
 Automated:
 
@@ -33,8 +35,63 @@ Automated:
 
 - https://designmodo.com/responsive-test
 
+Browser Tools:
 
+  Right click and =Inspect Element=. There should be an icon that looks like a phone or tablet in the top left or top right of the browser tools. This will let you view your page at different device resolutions.
 
+** Benefits of Responsive Design
+When making a website for different devices, there are three main options:
 
+- Responsive Design: the page adjusts its layout to accommodate the device
+- Adaptive Design: Different versions of the page exist for different devices
+- Multiple sites: different sites at different URLs (think https://en.wikipedia.org (desktop/laptop) and https://en.m.wikipedia.org (mobile))
+
+We are going to look at Responsive Design, because it has several benefits that the other two options do not have:
+
+- 1 web site. You don't need to maintain several versions of the code.
+- Search engines can tell, and reward you, for using Responsive Design
+- Single URL
+- Faster load times
 
 ** Fluid Measurements
+If we are trying to make our site work on devices with different resolutions, then we need to reevaluate ou approach to sizing and positioning elements. Fluid Measurements are a way to define sizes that adjust based on the resolutions.
+
+One thing to keep in mind about scrolling on websites:
+
+- Vertical scrolling is okay. Scroll wheels and vertical finger-drags are cool with vertical scrolling.
+
+- Horizontal scrolling is bad. It's difficult for all users. No device does horizontal scrolling well.
+
+To refresh our memories, here is a list of Absolute Measurements, which are measurements that do not change based on resolution. These measurements do not work in responsive designs.
+
+- =px= pixel
+- =mm= millimeter
+- =cm= centimeter
+- =in= inch
+- =pt= point, 1/72 of an inch
+- =pc= pica, 12 points
+
+We want to use **Relative Measurements**, which are measurements that work with multiple resolutions.
+
+- =%=
+
+  Percent. These values are always relative to the parent elements.
+
+- =em=
+
+  The font size of an element.
+
+- =rem=
+
+  font size of the root element
+
+- =vw=
+
+  viewport width. The width of the window, screen, etc. =1vw= is =1%= of width.
+
+- =vh=
+
+  viewport height. the height of the window, screen, etc. =1vh= is =1%= of height.
+
+There will be times when you want to hardcode a size in pixels. However, layout should always be in relative units.
+
